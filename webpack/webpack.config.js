@@ -3,6 +3,7 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 const frontendDirectory = path.join(__dirname, './../frontend/src/');
+const backendDirectory = path.join(__dirname, './../backend/');
 
 module.exports = {
 	mode: 'development',
@@ -17,6 +18,7 @@ module.exports = {
 	],
 	entry: path.join(frontendDirectory, 'main.tsx'),
 	output: {
+		path: path.join(backendDirectory, '/public/dist/'),
 		filename: 'bundle.js'
 	},
 	resolve: {
