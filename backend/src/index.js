@@ -1,28 +1,14 @@
 'use strict';
 
+require('dotenv').config();
+
 const Hapi = require('hapi');
-const Webpack = require('webpack');
-const Dashboard = require('webpack-dashboard/plugin');
 const Inert = require('inert');
 const path = require('path');
-const devMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('../../webpack/webpack.config');
 const routes = require('./routes');
-
-const compiler = Webpack(webpackConfig);
 
 const host = 'localhost';
 const port = '8080';
-
-compiler.apply(new Dashboard());
-
-const devMiddlewareInstance = devMiddleware(compiler, {
-	host,
-	port,
-	historyApiFallback: true,
-	publicPath: webpackConfig.output.publicPath,
-	quiet: true
-});
 
 const server = Hapi.server({
 	host: 'localhost',
@@ -34,15 +20,34 @@ const server = Hapi.server({
 	}
 });
 
-server.ext('onRequest', function(request, reply) {
-	return devMiddlewareInstance(request.raw.req, request.raw.res, function(err) {
-		if (err) {
-			return reply(err);
-		}
+if (process.env.NODE_ENV === 'development') {
+	const Webpack = require('webpack');
+	const Dashboard = require('webpack-dashboard/plugin');
+	const devMiddleware = require('webpack-dev-middleware');
+	const webpackConfig = require('../../webpack/webpack.config');
 
-		return reply.continue;
+	const compiler = Webpack(webpackConfig);
+
+	compiler.apply(new Dashboard());
+
+	const devMiddlewareInstance = devMiddleware(compiler, {
+		host,
+		port,
+		historyApiFallback: true,
+		publicPath: webpackConfig.output.publicPath,
+		quiet: true
 	});
-});
+
+	server.ext('onRequest', function(request, reply) {
+		return devMiddlewareInstance(request.raw.req, request.raw.res, function(err) {
+			if (err) {
+				return reply(err);
+			}
+
+			return reply.continue;
+		});
+	});
+}
 
 server.route(routes);
 
