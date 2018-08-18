@@ -6,7 +6,7 @@ const Dashboard = require('webpack-dashboard/plugin');
 const Inert = require('inert');
 const path = require('path');
 const devMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('./../../webpack/webpack.config');
+const webpackConfig = require('../../webpack/webpack.config');
 const routes = require('./routes');
 
 const compiler = Webpack(webpackConfig);

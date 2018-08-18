@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start-dev": "webpack-dashboard -- node ./backend/src/dev.js"
+		"start-dev": "webpack-dashboard -- node ./backend/src/index.js",
+		"build": "webpack --config ./webpack/webpack-config.js"
 	},
 	"author": "Joseph Walker <joseph.walker@outlook.com>",
 	"license": "MIT",
