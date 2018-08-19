@@ -1,6 +1,4 @@
-interface Functor<A> {
-	map<B>(fn: (x: A) => B): Functor<B>
-}
+import { Functor } from './Functor';
 
 export enum Type {
 	Just,

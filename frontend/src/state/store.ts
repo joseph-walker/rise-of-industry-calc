@@ -1,20 +1,26 @@
-import { createStore, combineReducers, compose } from 'redux';
-import { install as installReduxLoop } from 'redux-loop';
+import { createStore, compose } from 'redux';
+import { StoreCreator, combineReducers, install as installReduxLoop } from 'redux-loop';
 
-import { solverReducer } from './modules/solver';
+import { productsReducer, initialState as productsInitialState } from './modules/products/reducer';
+import { fetchRates } from './modules/products/actions/fetchRates';
 
 // @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const reducers = combineReducers({
-	solver: solverReducer
-});
+const enhancedCreateStore = createStore as StoreCreator;
 
 const enhancer = composeEnhancers(
 	installReduxLoop()
 );
 
-export const store = createStore(
-	reducers,
-	enhancer
-);
+const reducers = combineReducers({
+	products: productsReducer
+});
+
+const initialState = {
+	products: productsInitialState
+};
+
+export const store = enhancedCreateStore(reducers, initialState, enhancer );
+
+store.dispatch(fetchRates());
