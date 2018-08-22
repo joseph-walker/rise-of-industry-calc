@@ -18,6 +18,10 @@ export class Maybe<T> implements Monad<T> {
 		return new Maybe(MaybeType.Nothing, null);
 	}
 
+	static pure<T>(x: T): Maybe<T> {
+		return Maybe.Just(x);
+	}
+
 	public isJust() {
 		return this.type === MaybeType.Just;
 	}
@@ -31,10 +35,6 @@ export class Maybe<T> implements Monad<T> {
 			return Maybe.Just(fn(this.value));
 
 		return Maybe.Nothing();
-	}
-
-	public pure(x: T): Maybe<T> {
-		return Maybe.Just(x);
 	}
 
 	public ap<U>(maybeFn: Maybe<(x: T) => U>): Maybe<U> {

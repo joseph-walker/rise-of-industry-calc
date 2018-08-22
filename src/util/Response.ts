@@ -29,6 +29,10 @@ export class Response<T, E> implements Monad<T> {
 		return new Response(ResponseType.Error, null, err);
 	}
 
+	static pure<T, E>(x: T): Response<T, E> {
+		return Response.Ready(x);
+	}
+
 	public isLoading() {
 		return this.type === ResponseType.Loading;
 	}
@@ -48,10 +52,6 @@ export class Response<T, E> implements Monad<T> {
 			return Response.Error(this.err);
 
 		return Response.Loading();
-	}
-
-	public pure(x: T): Response<T, E> {
-		return Response.Ready(x);
 	}
 
 	public ap<U>(responseFn: Response<(x: T) => U, E>): Response<U, E> {
