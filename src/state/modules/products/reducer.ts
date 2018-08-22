@@ -5,15 +5,15 @@ import { runFetchRates } from './commands/runFetchRates';
 import { Response } from './../../../util/Response';
 import { Chunks } from './../../../data/types';
 
-interface ProductsState {
-	rawProducts: Response<Chunks, string>
-}
-
 type ProductsAction
 	= FetchRatesAction
 
+export interface ProductsState {
+	productChunks: Response<Chunks, string>
+}
+
 export const initialState: ProductsState = {
-	rawProducts: Response.Loading()
+	productChunks: Response.Loading()
 }
 
 export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (state: ProductsState = initialState, action: ProductsAction) => {
@@ -30,13 +30,13 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 		case FetchRatesActionTypes.Success: {
 			return {
 				...state,
-				products: Response.Ready(action.rates)
+				productChunks: Response.Ready(action.rates)
 			};
 		}
 		case FetchRatesActionTypes.Fail: {
 			return {
 				...state,
-				products: Response.Error(action.error)
+				productChunks: Response.Error('There was a problem fetching production rate data.')
 			};
 		}
 		default: {

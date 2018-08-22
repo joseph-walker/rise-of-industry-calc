@@ -6,6 +6,12 @@ enum ResponseType {
 	Error = 'RESPONSE_ERROR'
 }
 
+export interface ResponsePatternMatch<T, E, U> {
+	loading: () => U,
+	ready: (x: T) => U,
+	error: (e: E) => U
+}
+
 export class Response<T, E> implements Monad<T> {
 	constructor(readonly type: ResponseType, readonly value: T, readonly err: E) {
 		//
@@ -16,7 +22,7 @@ export class Response<T, E> implements Monad<T> {
 	}
 
 	static Ready<T>(value: T): Response<T, any> {
-		return new Response(ResponseType.Loading, value, null);
+		return new Response(ResponseType.Ready, value, null);
 	}
 
 	static Error<E>(err: E): Response<any, E> {
@@ -71,5 +77,14 @@ export class Response<T, E> implements Monad<T> {
 			return Response.Error(this.err);
 
 		return Response.Loading();
+	}
+
+	public with<U>(patterns: ResponsePatternMatch<T, E, U>): U {
+		if (this.isReady())
+			return patterns.ready(this.value);
+		else if (this.isError())
+			return patterns.error(this.err);
+
+		return patterns.loading();
 	}
 }
