@@ -1,27 +1,30 @@
 import { tail } from 'ramda';
 
-import { Product, Rate } from './types';
+import { Chunks, Product, Rate } from './types';
 import { getRequirements } from './getRequirements';
 import { Maybe } from './../util/Maybe';
 
-export function solve(requiredRate: Rate, productList: Product[]): Maybe<[Product, number]> {
+export function solve(chunks: Chunks, requiredRate: Rate, productList: Product[]): Maybe<[Product, number]> {
 	switch (productList.length) {
 		case 0: {
-			return new Maybe.Nothing();
+			return Maybe.Nothing();
 		}
 		case 1: {
 			const p = productList[0];
 			const j: [Product, number] = [p, Math.ceil(requiredRate / p.outputRate)];
 
-			return new Maybe.Just(j);
+			return Maybe.Just(j);
 		}
 		default: {
 			const p1 = productList[0];
 			const p2 = productList[1];
 			const numFactories = Math.ceil(requiredRate / p1.outputRate);
-			const nextProductRequiredRate = numFactories * getRequirements(p1.name, p2.name);
+			const nextProductRequiredRate = getRequirements(chunks, p1.name, p2.name).map(n => n * numFactories);
 
-			return solve(nextProductRequiredRate, [].concat(p2, tail(productList)));
+			return nextProductRequiredRate
+				.chain(function(nextProductRate) {
+					return solve(chunks, nextProductRate, [].concat(p2, tail(productList)))
+				});
 		}
 	}
 }

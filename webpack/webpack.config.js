@@ -1,4 +1,3 @@
-const TCMPlugin = require('./TCMPlugin.js');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
@@ -8,15 +7,6 @@ const publicPath = path.join(backendDirectory, '/public/dist/');
 
 module.exports = {
 	mode: 'development',
-	plugins: [
-		new MiniCSSExtractPlugin({
-			filename: '[name].css',
-			chunkFilename: '[id].css'
-		}),
-		new TCMPlugin({
-			srcDirectory: frontendDirectory
-		})
-	],
 	entry: path.join(frontendDirectory, 'main.tsx'),
 	output: {
 		path: publicPath,
@@ -28,21 +18,6 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{
-				test: /\.css$/,
-				include: frontendDirectory,
-				use: [
-					{ loader: MiniCSSExtractPlugin.loader },
-					{
-						loader: 'css-loader',
-						options: {
-							modules: true,
-							camelCase: true,
-							localIdentName: '[folder]:[name]_[local]--[hash:base64:5]'
-						}
-					}
-				]
-			},
 			{ test: /\.tsx?$/, loader: 'ts-loader' }
 		]
 	}

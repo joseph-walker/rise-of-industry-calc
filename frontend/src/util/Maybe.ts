@@ -1,44 +1,53 @@
-import { Functor } from './Functor';
+import { Monad } from './Algebra';
 
-export enum Type {
-	Just,
-	Nothing
+enum MaybeType {
+	Just = 'MAYBE_JUST',
+	Nothing = 'MAYBE_NOTHING'
 }
 
-export class Just<A> implements Functor<A> {
-	readonly type: Type.Just = Type.Just;
-
-	constructor(readonly data: A) {
+export class Maybe<T> implements Monad<T> {
+	private constructor (readonly type: MaybeType, readonly value: T) {
 		//
 	}
 
-	static new<T>(data: T): Just<T> {
-		return new Just(data);
+	public static Just<T>(value: T): Maybe<T> {
+		return new Maybe(MaybeType.Just, value);
 	}
 
-	public map<B>(fn: (x: A) => B): Just<B> {
-		return new Just(fn(this.data));
-	}
-}
-
-export class Nothing implements Functor<any> {
-	readonly type: Type.Nothing = Type.Nothing;
-
-	static new() {
-		return new Nothing();
+	public static Nothing<T>(): Maybe<T> {
+		return new Maybe(MaybeType.Nothing, null);
 	}
 
-	public map(_: any) {
-		return new Nothing();
+	public isJust() {
+		return this.type === MaybeType.Just;
 	}
-}
 
-export type Maybe<T>
-	= Just<T>
-	| Nothing
+	public isNothing() {
+		return this.type === MaybeType.Nothing;
+	}
 
-export const Maybe = {
-	Type,
-	Just,
-	Nothing
+	public map<U>(fn: (x: T) => U): Maybe<U> {
+		if (this.isJust())
+			return Maybe.Just(fn(this.value));
+
+		return Maybe.Nothing();
+	}
+
+	public pure(x: T): Maybe<T> {
+		return Maybe.Just(x);
+	}
+
+	public ap<U>(maybeFn: Maybe<(x: T) => U>): Maybe<U> {
+		if (this.isJust() && maybeFn.isJust())
+			return Maybe.Just(maybeFn.value(this.value));
+
+		return Maybe.Nothing();
+	}
+
+	public chain<U>(fn: (x: T) => Maybe<U>): Maybe<U> {
+		if (this.isJust())
+			return fn(this.value);
+
+		return Maybe.Nothing();
+	}
 }

@@ -7,11 +7,11 @@ export interface Product {
 
 export interface Recipe {
 	name: string,
-	requireRate: Rate,
+	requiredRate: Rate,
 	components: Recipe[]
 }
 
-export interface Chunk {
+export interface Chunks {
 	[name: string]: {
 		name: string,
 		unitRate: Rate,

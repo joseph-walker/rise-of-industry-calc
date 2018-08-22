@@ -1,63 +1,75 @@
-import { Functor } from './Functor';
+import { Monad } from './Algebra';
 
-export enum Type {
+enum ResponseType {
 	Loading = 'RESPONSE_LOADING',
-	Error = 'RESPONSE_ERROR',
-	Ready = 'RESPONSE_READY'
+	Ready = 'RESPONSE_READY',
+	Error = 'RESPONSE_ERROR'
 }
 
-export class Loading implements Functor<any> {
-	readonly type: Type.Loading = Type.Loading;
-
-	static new() {
-		return new Loading();
-	}
-
-	public map(_: any) {
-		return new Loading();
-	}
-}
-
-export class Error<E> implements Functor<E> {
-	readonly type: Type.Error = Type.Error;
-
-	constructor(readonly err: E) {
+export class Response<T, E> implements Monad<T> {
+	constructor(readonly type: ResponseType, readonly value: T, readonly err: E) {
 		//
 	}
 
-	static new<T>(err: T): Error<T> {
-		return new Error(err);
+	static Loading(): Response<any, any> {
+		return new Response(ResponseType.Loading, null, null);
 	}
 
-	public map(_: any) {
-		return new Error(this.err);
+	static Ready<T>(value: T): Response<T, any> {
+		return new Response(ResponseType.Loading, value, null);
+	}
+
+	static Error<E>(err: E): Response<any, E> {
+		return new Response(ResponseType.Error, null, err);
+	}
+
+	public isLoading() {
+		return this.type === ResponseType.Loading;
+	}
+
+	public isReady() {
+		return this.type === ResponseType.Ready;
+	}
+
+	public isError() {
+		return this.type === ResponseType.Error;
+	}
+
+	public map<U>(fn: (x: T) => U): Response<U, E> {
+		if (this.isReady())
+			return Response.Ready(fn(this.value));
+		else if (this.isError())
+			return Response.Error(this.err);
+
+		return Response.Loading();
+	}
+
+	public pure(x: T): Response<T, E> {
+		return Response.Ready(x);
+	}
+
+	public ap<U>(responseFn: Response<(x: T) => U, E>): Response<U, E> {
+		if (this.isReady()) {
+			if (responseFn.isReady()) {
+				return Response.Ready(responseFn.value(this.value));
+			}
+			else if (responseFn.isError()) {
+				return Response.Error(responseFn.err);
+			}
+		}
+		else if (this.isError()) {
+			return Response.Error(this.err);
+		}
+
+		return Response.Loading();
+	}
+
+	public chain<U>(fn: (x: T) => Response<U, E>): Response<U, E> {
+		if (this.isReady())
+			return fn(this.value);
+		else if (this.isError())
+			return Response.Error(this.err);
+
+		return Response.Loading();
 	}
 }
-
-export class Ready<A> implements Functor<A> {
-	readonly type: Type.Ready = Type.Ready;
-
-	constructor(readonly data: A) {
-		//
-	}
-
-	static new<T>(err: T): Ready<T> {
-		return new Ready(err);
-	}
-
-	public map<B>(fn: (x: A) => B): Ready<B> {
-		return new Ready(fn(this.data));
-	}
-}
-
-export type Response<A, E>
-	= Loading
-	| Error<E>
-	| Ready<A>
-
-export const Response = {
-	Type,
-	Loading,
-	Error,
-	Ready
-};

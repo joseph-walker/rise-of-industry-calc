@@ -15,7 +15,7 @@ const server = Hapi.server({
 	port: '8080',
 	routes: {
 		files: {
-			relativeTo: path.join(__dirname, './../public/')
+			relativeTo: path.join(__dirname, './../')
 		}
 	}
 });

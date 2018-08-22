@@ -1,6 +1,6 @@
 import { Action, ActionCreator } from 'redux';
 
-import { Chunk } from './../../../../data/types';
+import { Chunks } from './../../../../data/types';
 
 export enum FetchRatesActionTypes {
 	Init = '@@products/FETCH_RATES_INIT',
@@ -14,7 +14,7 @@ interface FetchRatesInitAction extends Action {
 
 interface FetchRatesSuccessAction extends Action {
 	type: FetchRatesActionTypes.Success,
-	rates: Chunk[]
+	rates: Chunks
 }
 
 interface FetchRatesFailAction extends Action {
@@ -33,9 +33,7 @@ export const fetchRates: ActionCreator<FetchRatesInitAction> = () => {
 	};
 };
 
-export const fetchRatesSuccess: ActionCreator<FetchRatesSuccessAction> = (rates: Chunk[]) => {
-	console.log(rates);
-
+export const fetchRatesSuccess: ActionCreator<FetchRatesSuccessAction> = (rates: Chunks) => {
 	return {
 		type: FetchRatesActionTypes.Success,
 		rates
