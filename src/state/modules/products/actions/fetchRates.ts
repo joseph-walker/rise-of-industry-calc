@@ -1,5 +1,3 @@
-import { Action, ActionCreator } from 'redux';
-
 import { Chunks } from './../../../../data/types';
 
 export enum FetchRatesActionTypes {
@@ -8,16 +6,16 @@ export enum FetchRatesActionTypes {
 	Fail = '@@products/FETCH_RATES_FAIL'
 }
 
-interface FetchRatesInitAction extends Action {
+interface FetchRatesInitAction {
 	type: FetchRatesActionTypes.Init
 }
 
-interface FetchRatesSuccessAction extends Action {
+interface FetchRatesSuccessAction {
 	type: FetchRatesActionTypes.Success,
 	rates: Chunks
 }
 
-interface FetchRatesFailAction extends Action {
+interface FetchRatesFailAction {
 	type: FetchRatesActionTypes.Fail,
 	error: string
 }
@@ -27,20 +25,20 @@ export type FetchRatesAction
 	| FetchRatesSuccessAction
 	| FetchRatesFailAction
 
-export const fetchRates: ActionCreator<FetchRatesInitAction> = () => {
+export function fetchRates(): FetchRatesInitAction {
 	return {
 		type: FetchRatesActionTypes.Init
 	};
 };
 
-export const fetchRatesSuccess: ActionCreator<FetchRatesSuccessAction> = (rates: Chunks) => {
+export function fetchRatesSuccess(rates: Chunks): FetchRatesSuccessAction {
 	return {
 		type: FetchRatesActionTypes.Success,
 		rates
 	};
 };
 
-export const fetchRatesFail: ActionCreator<FetchRatesFailAction> = (error: string) => {
+export function fetchRatesFail(error: string): FetchRatesFailAction {
 	return {
 		type: FetchRatesActionTypes.Fail,
 		error

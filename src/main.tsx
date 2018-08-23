@@ -2,7 +2,8 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { App } from './containers/App';
+import './globalStyles';
+import { App } from './components/Layout/App';
 import { store } from './state/store';
 
 const app = (
@@ -11,4 +12,4 @@ const app = (
 	</Provider>
 );
 
-render(app, document.getElementById('app'));
+render(app, document.body);

@@ -1,19 +1,24 @@
 import { LoopReducer, loop, Cmd } from 'redux-loop';
 
 import { FetchRatesActionTypes, FetchRatesAction, fetchRatesSuccess, fetchRatesFail } from './actions/fetchRates';
+import { SearchActionTypes, SearchAction } from './actions/search';
 import { runFetchRates } from './commands/runFetchRates';
 import { Response } from './../../../util/Response';
+import { Maybe } from './../../../util/Maybe';
 import { Chunks } from './../../../data/types';
 
-type ProductsAction
+export type ProductsAction
 	= FetchRatesAction
+	| SearchAction
 
 export interface ProductsState {
-	productChunks: Response<Chunks, string>
+	productChunks: Response<Chunks, string>,
+	searchValue: Maybe<string>
 }
 
 export const initialState: ProductsState = {
-	productChunks: Response.Loading()
+	productChunks: Response.Loading(),
+	searchValue: Maybe.Nothing()
 }
 
 export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (state: ProductsState = initialState, action: ProductsAction) => {
@@ -37,6 +42,14 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 			return {
 				...state,
 				productChunks: Response.Error('There was a problem fetching production rate data.')
+			};
+		}
+		case SearchActionTypes.SetSearchValue: {
+			return {
+				...state,
+				searchValue: action.searchValue !== ''
+					? Maybe.Just(action.searchValue)
+					: Maybe.Nothing()
 			};
 		}
 		default: {

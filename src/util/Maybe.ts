@@ -5,6 +5,11 @@ enum MaybeType {
 	Nothing = 'MAYBE_NOTHING'
 }
 
+export interface MaybePatternMatch<T, U> {
+	just: (x: T) => U,
+	nothing: () => U
+}
+
 export class Maybe<T> implements Monad<T> {
 	private constructor (readonly type: MaybeType, readonly value: T) {
 		//
@@ -30,6 +35,13 @@ export class Maybe<T> implements Monad<T> {
 		return this.type === MaybeType.Nothing;
 	}
 
+	public withDefault(defaultValue: T): T {
+		if (this.isJust())
+			return this.value;
+
+		return defaultValue;
+	}
+
 	public map<U>(fn: (x: T) => U): Maybe<U> {
 		if (this.isJust())
 			return Maybe.Just(fn(this.value));
@@ -49,5 +61,12 @@ export class Maybe<T> implements Monad<T> {
 			return fn(this.value);
 
 		return Maybe.Nothing();
+	}
+
+	public with<U>(patterns: MaybePatternMatch<T, U>): U {
+		if (this.isJust())
+			return patterns.just(this.value);
+
+		return patterns.nothing();
 	}
 }

@@ -1,5 +1,3 @@
-import { reduceRight } from 'ramda';
-
 import { List } from './List';
 
 export interface Functor<T> {
