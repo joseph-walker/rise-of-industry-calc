@@ -1,48 +1,132 @@
 {
+    "Bottles": {
+        "name": "Bottles",
+        "unitRate": "0.05",
+        "components": [
+            {
+                "name": "Glass",
+                "unitRate": "0.075"
+            }
+        ]
+    },
     "Coal": {
         "name": "Coal",
         "unitRate": "0.1",
         "components": []
     },
-    "Copper": {
-        "name": "Copper",
-        "unitRate": "0.1",
-        "components": []
+    "Combustion Engine": {
+        "name": "Combustion Engine",
+        "unitRate": "0.016666666666667",
+        "components": [
+            {
+                "name": "Biofuel",
+                "unitRate": "0.15"
+            },
+            {
+                "name": "Alternator",
+                "unitRate": "0.05"
+            },
+            {
+                "name": "Car Radiator",
+                "unitRate": "0.05"
+            }
+        ]
     },
-    "Fish": {
-        "name": "Fish",
-        "unitRate": "0.1",
-        "components": []
+    "Car Prototype": {
+        "name": "Car Prototype",
+        "unitRate": "0.002777777777778",
+        "components": [
+            {
+                "name": "Body Chassis",
+                "unitRate": "0.008333333333333"
+            },
+            {
+                "name": "Rolling Chassis",
+                "unitRate": "0.008333333333333"
+            }
+        ]
     },
-    "Gas": {
-        "name": "Gas",
-        "unitRate": "0.1",
-        "components": []
+    "Body Chassis": {
+        "name": "Body Chassis",
+        "unitRate": "0.013333333333333",
+        "components": [
+            {
+                "name": "Exterior Body",
+                "unitRate": "0.04"
+            },
+            {
+                "name": "Interior Body",
+                "unitRate": "0.04"
+            },
+            {
+                "name": "Adhesive",
+                "unitRate": "0.12"
+            }
+        ]
     },
-    "Iron Ore": {
-        "name": "Iron Ore",
-        "unitRate": "0.1",
-        "components": []
+    "Axles": {
+        "name": "Axles",
+        "unitRate": "0.016666666666667",
+        "components": [
+            {
+                "name": "Steel Frame",
+                "unitRate": "0.05"
+            },
+            {
+                "name": "Tires",
+                "unitRate": "0.15"
+            },
+            {
+                "name": "Steel",
+                "unitRate": "0.05"
+            }
+        ]
     },
-    "Oil": {
-        "name": "Oil",
-        "unitRate": "0.1",
-        "components": []
+    "Barley Whiskey": {
+        "name": "Barley Whiskey",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Wheat",
+                "unitRate": "0.3"
+            },
+            {
+                "name": "Wooden Barrels",
+                "unitRate": "0.2"
+            },
+            {
+                "name": "Yeast",
+                "unitRate": "0.2"
+            }
+        ]
     },
-    "Sand": {
-        "name": "Sand",
-        "unitRate": "0.1",
-        "components": []
+    "Car Seat": {
+        "name": "Car Seat",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Furniture Base (S)",
+                "unitRate": "0.266666666666667"
+            },
+            {
+                "name": "Cotton",
+                "unitRate": "0.233333333333333"
+            }
+        ]
     },
-    "Water": {
-        "name": "Water",
-        "unitRate": "0.1",
-        "components": []
-    },
-    "Wood": {
-        "name": "Wood",
-        "unitRate": "0.1",
-        "components": []
+    "Car Radiator": {
+        "name": "Car Radiator",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Radiator",
+                "unitRate": "0.066666666666667"
+            },
+            {
+                "name": "Steel",
+                "unitRate": "0.066666666666667"
+            }
+        ]
     },
     "Apples": {
         "name": "Apples",
@@ -112,153 +196,181 @@
             }
         ]
     },
-    "Eggs": {
-        "name": "Eggs",
+    "Burgers": {
+        "name": "Burgers",
         "unitRate": "0.033333333333333",
         "components": [
             {
-                "name": "Water",
-                "unitRate": "0.033333333333333"
+                "name": "Dough",
+                "unitRate": "0.2"
             },
             {
-                "name": "Wheat",
+                "name": "Beef",
+                "unitRate": "0.1"
+            },
+            {
+                "name": "Vegetables",
                 "unitRate": "0.1"
             }
         ]
     },
-    "Grapes": {
-        "name": "Grapes",
-        "unitRate": "0.066666666666667",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Hops": {
-        "name": "Hops",
-        "unitRate": "0.1",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Leather": {
-        "name": "Leather",
-        "unitRate": "0.02",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.04"
-            },
-            {
-                "name": "Wheat",
-                "unitRate": "0.04"
-            }
-        ]
-    },
-    "Milk": {
-        "name": "Milk",
-        "unitRate": "0.02",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.04"
-            },
-            {
-                "name": "Wheat",
-                "unitRate": "0.04"
-            }
-        ]
-    },
-    "Mutton": {
-        "name": "Mutton",
+    "Brandy": {
+        "name": "Brandy",
         "unitRate": "0.033333333333333",
         "components": [
             {
-                "name": "Water",
-                "unitRate": "0.033333333333333"
+                "name": "Wine",
+                "unitRate": "0.233333333333333"
             },
             {
-                "name": "Wheat",
+                "name": "Bottles",
                 "unitRate": "0.1"
             }
         ]
     },
-    "Oranges": {
-        "name": "Oranges",
-        "unitRate": "0.066666666666667",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Potatoes": {
-        "name": "Potatoes",
-        "unitRate": "0.1",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Raw Rubber": {
-        "name": "Raw Rubber",
-        "unitRate": "0.066666666666667",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Sugar": {
-        "name": "Sugar",
-        "unitRate": "0.066666666666667",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Vegetables": {
-        "name": "Vegetables",
-        "unitRate": "0.1",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Wheat": {
-        "name": "Wheat",
-        "unitRate": "0.1",
-        "components": [
-            {
-                "name": "Water",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Wool": {
-        "name": "Wool",
+    "Books": {
+        "name": "Books",
         "unitRate": "0.033333333333333",
         "components": [
             {
-                "name": "Water",
-                "unitRate": "0.033333333333333"
+                "name": "Printed Paper",
+                "unitRate": "0.166666666666667"
+            }
+        ]
+    },
+    "Berry Pie": {
+        "name": "Berry Pie",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Berries",
+                "unitRate": "0.3"
             },
             {
-                "name": "Wheat",
-                "unitRate": "0.1"
+                "name": "Dough",
+                "unitRate": "0.2"
+            }
+        ]
+    },
+    "Chocolate Cake": {
+        "name": "Chocolate Cake",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Flour",
+                "unitRate": "0.111111111111111"
+            },
+            {
+                "name": "Eggs",
+                "unitRate": "0.044444444444445"
+            },
+            {
+                "name": "Cocoa",
+                "unitRate": "0.111111111111111"
+            }
+        ]
+    },
+    "Chicken Soup": {
+        "name": "Chicken Soup",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Chicken Meat",
+                "unitRate": "0.155555555555556"
+            },
+            {
+                "name": "Water",
+                "unitRate": "0.066666666666667"
+            },
+            {
+                "name": "Vegetables",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Cheese": {
+        "name": "Cheese",
+        "unitRate": "0.05",
+        "components": [
+            {
+                "name": "Milk",
+                "unitRate": "0.05"
+            },
+            {
+                "name": "Water",
+                "unitRate": "0.075"
+            }
+        ]
+    },
+    "Ceramics": {
+        "name": "Ceramics",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Glass",
+                "unitRate": "0.155555555555556"
+            },
+            {
+                "name": "Sand",
+                "unitRate": "0.088888888888889"
+            }
+        ]
+    },
+    "Cardboard Panels": {
+        "name": "Cardboard Panels",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Heavy Pulp",
+                "unitRate": "0.177777777777778"
+            }
+        ]
+    },
+    "Cardboard": {
+        "name": "Cardboard",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Heavy Pulp",
+                "unitRate": "0.111111111111111"
+            }
+        ]
+    },
+    "Cans": {
+        "name": "Cans",
+        "unitRate": "0.05",
+        "components": [
+            {
+                "name": "Steel",
+                "unitRate": "0.075"
+            }
+        ]
+    },
+    "Canned Mutton": {
+        "name": "Canned Mutton",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Cans",
+                "unitRate": "0.022222222222222"
+            },
+            {
+                "name": "Mutton",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Canned Fish": {
+        "name": "Canned Fish",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Cans",
+                "unitRate": "0.022222222222222"
+            },
+            {
+                "name": "Fish",
+                "unitRate": "0.066666666666667"
             }
         ]
     },
@@ -334,93 +446,114 @@
             }
         ]
     },
-    "Dye": {
-        "name": "Dye",
-        "unitRate": "0.057142857142857",
-        "components": [
-            {
-                "name": "Berries",
-                "unitRate": "0.114285714285714"
-            },
-            {
-                "name": "Water",
-                "unitRate": "0.057142857142857"
-            }
-        ]
+    "Copper": {
+        "name": "Copper",
+        "unitRate": "0.1",
+        "components": []
     },
-    "Fibres": {
-        "name": "Fibres",
-        "unitRate": "0.066666666666667",
-        "components": [
-            {
-                "name": "Cotton",
-                "unitRate": "0.1"
-            }
-        ]
-    },
-    "Flour": {
-        "name": "Flour",
+    "Biofuel": {
+        "name": "Biofuel",
         "unitRate": "0.08",
         "components": [
             {
-                "name": "Wheat",
-                "unitRate": "0.16"
+                "name": "Potato",
+                "unitRate": "0.2"
             }
         ]
     },
-    "Glass": {
-        "name": "Glass",
-        "unitRate": "0.085714285714286",
+    "Beer": {
+        "name": "Beer",
+        "unitRate": "0.044444444444445",
         "components": [
             {
-                "name": "Sand",
-                "unitRate": "0.142857142857143"
+                "name": "Wooden Barrels",
+                "unitRate": "0.022222222222222"
             },
             {
-                "name": "Coal",
-                "unitRate": "0.057142857142857"
+                "name": "Hops",
+                "unitRate": "0.088888888888889"
+            },
+            {
+                "name": "Yeast",
+                "unitRate": "0.044444444444445"
             }
         ]
     },
-    "Grape Juice": {
-        "name": "Grape Juice",
-        "unitRate": "0.057142857142857",
+    "Beef Stew": {
+        "name": "Beef Stew",
+        "unitRate": "0.044444444444445",
         "components": [
             {
-                "name": "Grapes",
-                "unitRate": "0.114285714285714"
+                "name": "Beef",
+                "unitRate": "0.111111111111111"
             },
             {
-                "name": "Water",
-                "unitRate": "0.057142857142857"
+                "name": "Potato",
+                "unitRate": "0.111111111111111"
+            },
+            {
+                "name": "Hops",
+                "unitRate": "0.066666666666667"
             }
         ]
     },
-    "Hard Cider": {
-        "name": "Hard Cider",
-        "unitRate": "0.08",
+    "Bag Of Chips": {
+        "name": "Bag Of Chips",
+        "unitRate": "0.05",
         "components": [
             {
-                "name": "Apples",
-                "unitRate": "0.16"
+                "name": "Potato",
+                "unitRate": "0.05"
             },
             {
-                "name": "Sugar",
-                "unitRate": "0.08"
+                "name": "Parchment",
+                "unitRate": "0.05"
             }
         ]
     },
-    "Heavy Pulp": {
-        "name": "Heavy Pulp",
-        "unitRate": "0.066666666666667",
+    "Alternator": {
+        "name": "Alternator",
+        "unitRate": "0.044444444444445",
         "components": [
             {
-                "name": "Wood",
-                "unitRate": "0.166666666666667"
+                "name": "Copper Wire",
+                "unitRate": "0.066666666666667"
             },
             {
-                "name": "Water",
-                "unitRate": "0.133333333333333"
+                "name": "Steel",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Adhesive": {
+        "name": "Adhesive",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Chemicals",
+                "unitRate": "0.066666666666667"
+            },
+            {
+                "name": "Plastics",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Refrigerator": {
+        "name": "Refrigerator",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Copper Tubing",
+                "unitRate": "0.088888888888889"
+            },
+            {
+                "name": "Steel",
+                "unitRate": "0.044444444444445"
+            },
+            {
+                "name": "Gas",
+                "unitRate": "0.044444444444445"
             }
         ]
     },
@@ -438,6 +571,453 @@
             }
         ]
     },
+    "Interior Body": {
+        "name": "Interior Body",
+        "unitRate": "0.016666666666667",
+        "components": [
+            {
+                "name": "Radio Receiver",
+                "unitRate": "0.05"
+            },
+            {
+                "name": "Interior Lining",
+                "unitRate": "0.1"
+            },
+            {
+                "name": "Car Seat",
+                "unitRate": "0.1"
+            }
+        ]
+    },
+    "Exterior Body": {
+        "name": "Exterior Body",
+        "unitRate": "0.016666666666667",
+        "components": [
+            {
+                "name": "Windows",
+                "unitRate": "0.1"
+            },
+            {
+                "name": "Headlights",
+                "unitRate": "0.033333333333333"
+            },
+            {
+                "name": "Paint",
+                "unitRate": "0.05"
+            }
+        ]
+    },
+    "Fish": {
+        "name": "Fish",
+        "unitRate": "0.1",
+        "components": []
+    },
+    "Gas": {
+        "name": "Gas",
+        "unitRate": "0.1",
+        "components": []
+    },
+    "Iron Ore": {
+        "name": "Iron Ore",
+        "unitRate": "0.1",
+        "components": []
+    },
+    "Interior Lining": {
+        "name": "Interior Lining",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Heavy Fabric",
+                "unitRate": "0.066666666666667"
+            },
+            {
+                "name": "Cardboard Panels",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Headlights": {
+        "name": "Headlights",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Light Bulbs",
+                "unitRate": "0.066666666666667"
+            },
+            {
+                "name": "Glass",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Deluxe Books": {
+        "name": "Deluxe Books",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Printed Paper",
+                "unitRate": "0.166666666666667"
+            },
+            {
+                "name": "Leather",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Eggs": {
+        "name": "Eggs",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.033333333333333"
+            },
+            {
+                "name": "Wheat",
+                "unitRate": "0.1"
+            }
+        ]
+    },
+    "Grapes": {
+        "name": "Grapes",
+        "unitRate": "0.066666666666667",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Heavy Pulp": {
+        "name": "Heavy Pulp",
+        "unitRate": "0.066666666666667",
+        "components": [
+            {
+                "name": "Wood",
+                "unitRate": "0.166666666666667"
+            },
+            {
+                "name": "Water",
+                "unitRate": "0.133333333333333"
+            }
+        ]
+    },
+    "Hard Cider": {
+        "name": "Hard Cider",
+        "unitRate": "0.08",
+        "components": [
+            {
+                "name": "Apples",
+                "unitRate": "0.16"
+            },
+            {
+                "name": "Sugar",
+                "unitRate": "0.08"
+            }
+        ]
+    },
+    "Grape Juice": {
+        "name": "Grape Juice",
+        "unitRate": "0.057142857142857",
+        "components": [
+            {
+                "name": "Grapes",
+                "unitRate": "0.114285714285714"
+            },
+            {
+                "name": "Water",
+                "unitRate": "0.057142857142857"
+            }
+        ]
+    },
+    "Glass": {
+        "name": "Glass",
+        "unitRate": "0.085714285714286",
+        "components": [
+            {
+                "name": "Sand",
+                "unitRate": "0.142857142857143"
+            },
+            {
+                "name": "Coal",
+                "unitRate": "0.057142857142857"
+            }
+        ]
+    },
+    "Flour": {
+        "name": "Flour",
+        "unitRate": "0.08",
+        "components": [
+            {
+                "name": "Wheat",
+                "unitRate": "0.16"
+            }
+        ]
+    },
+    "Fibres": {
+        "name": "Fibres",
+        "unitRate": "0.066666666666667",
+        "components": [
+            {
+                "name": "Cotton",
+                "unitRate": "0.1"
+            }
+        ]
+    },
+    "Dye": {
+        "name": "Dye",
+        "unitRate": "0.057142857142857",
+        "components": [
+            {
+                "name": "Berries",
+                "unitRate": "0.114285714285714"
+            },
+            {
+                "name": "Water",
+                "unitRate": "0.057142857142857"
+            }
+        ]
+    },
+    "Hops": {
+        "name": "Hops",
+        "unitRate": "0.1",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.05"
+            }
+        ]
+    },
+    "Heavy Fabric": {
+        "name": "Heavy Fabric",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Fibres",
+                "unitRate": "0.044444444444445"
+            },
+            {
+                "name": "Dye",
+                "unitRate": "0.022222222222222"
+            },
+            {
+                "name": "Leather",
+                "unitRate": "0.044444444444445"
+            }
+        ]
+    },
+    "Furniture Base (S)": {
+        "name": "Furniture Base (S)",
+        "unitRate": "0.05",
+        "components": [
+            {
+                "name": "Wooden Planks",
+                "unitRate": "0.05"
+            }
+        ]
+    },
+    "Furniture Base (L)": {
+        "name": "Furniture Base (L)",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Wooden Planks",
+                "unitRate": "0.111111111111111"
+            }
+        ]
+    },
+    "Dough": {
+        "name": "Dough",
+        "unitRate": "0.05",
+        "components": [
+            {
+                "name": "Flour",
+                "unitRate": "0.1"
+            },
+            {
+                "name": "Water",
+                "unitRate": "0.025"
+            }
+        ]
+    },
+    "Diodes": {
+        "name": "Diodes",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Copper Wire",
+                "unitRate": "0.088888888888889"
+            },
+            {
+                "name": "Glass",
+                "unitRate": "0.044444444444445"
+            }
+        ]
+    },
+    "Wood": {
+        "name": "Wood",
+        "unitRate": "0.1",
+        "components": []
+    },
+    "Oranges": {
+        "name": "Oranges",
+        "unitRate": "0.066666666666667",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Milk": {
+        "name": "Milk",
+        "unitRate": "0.02",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.04"
+            },
+            {
+                "name": "Wheat",
+                "unitRate": "0.04"
+            }
+        ]
+    },
+    "Oil": {
+        "name": "Oil",
+        "unitRate": "0.1",
+        "components": []
+    },
+    "Oven": {
+        "name": "Oven",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Stovetop",
+                "unitRate": "0.066666666666667"
+            },
+            {
+                "name": "Ceramics",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Orange Soda": {
+        "name": "Orange Soda",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Soda Warer",
+                "unitRate": "0.2"
+            },
+            {
+                "name": "Orange Juice",
+                "unitRate": "0.1"
+            },
+            {
+                "name": "Bottles",
+                "unitRate": "0.033333333333333"
+            }
+        ]
+    },
+    "Office Furniture": {
+        "name": "Office Furniture",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Furniture Base (L)",
+                "unitRate": "0.166666666666667"
+            },
+            {
+                "name": "Steel",
+                "unitRate": "0.166666666666667"
+            }
+        ]
+    },
+    "Newspapers": {
+        "name": "Newspapers",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Printed Paper",
+                "unitRate": "0.166666666666667"
+            },
+            {
+                "name": "Ink",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Light Bulbs": {
+        "name": "Light Bulbs",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Copper Wire",
+                "unitRate": "0.088888888888889"
+            },
+            {
+                "name": "Glass",
+                "unitRate": "0.088888888888889"
+            }
+        ]
+    },
+    "Light Fabric": {
+        "name": "Light Fabric",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Fibres",
+                "unitRate": "0.066666666666667"
+            },
+            {
+                "name": "Dye",
+                "unitRate": "0.022222222222222"
+            }
+        ]
+    },
+    "Leather Furniture": {
+        "name": "Leather Furniture",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Furniture Base (S)",
+                "unitRate": "0.166666666666667"
+            },
+            {
+                "name": "Leather",
+                "unitRate": "0.266666666666667"
+            }
+        ]
+    },
+    "Mutton": {
+        "name": "Mutton",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.033333333333333"
+            },
+            {
+                "name": "Wheat",
+                "unitRate": "0.1"
+            }
+        ]
+    },
+    "Leather": {
+        "name": "Leather",
+        "unitRate": "0.02",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.04"
+            },
+            {
+                "name": "Wheat",
+                "unitRate": "0.04"
+            }
+        ]
+    },
     "Orange Juice": {
         "name": "Orange Juice",
         "unitRate": "0.057142857142857",
@@ -449,6 +1029,26 @@
             {
                 "name": "Water",
                 "unitRate": "0.114285714285714"
+            }
+        ]
+    },
+    "Vegetables": {
+        "name": "Vegetables",
+        "unitRate": "0.1",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.05"
+            }
+        ]
+    },
+    "Rubber Tubes": {
+        "name": "Rubber Tubes",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Rubber",
+                "unitRate": "0.066666666666667"
             }
         ]
     },
@@ -500,421 +1100,27 @@
             }
         ]
     },
-    "Soda Water": {
-        "name": "Soda Water",
-        "unitRate": "0.066666666666667",
+    "Potatoes": {
+        "name": "Potatoes",
+        "unitRate": "0.1",
         "components": [
-            {
-                "name": "Sugar",
-                "unitRate": "0.044444444444445"
-            },
             {
                 "name": "Water",
-                "unitRate": "0.022222222222222"
-            }
-        ]
-    },
-    "Soup": {
-        "name": "Soup",
-        "unitRate": "0.066666666666667",
-        "components": [
-            {
-                "name": "Vegetables",
-                "unitRate": "0.1"
-            },
-            {
-                "name": "Water",
-                "unitRate": "0.1"
-            }
-        ]
-    },
-    "Steel": {
-        "name": "Steel",
-        "unitRate": "0.085714285714286",
-        "components": [
-            {
-                "name": "Iron Ore",
-                "unitRate": "0.114285714285714"
-            },
-            {
-                "name": "Coal",
-                "unitRate": "0.057142857142857"
-            }
-        ]
-    },
-    "Wine": {
-        "name": "Wine",
-        "unitRate": "0.06",
-        "components": [
-            {
-                "name": "Grapes",
-                "unitRate": "0.12"
-            }
-        ]
-    },
-    "Wooden Planks": {
-        "name": "Wooden Planks",
-        "unitRate": "0.075",
-        "components": [
-            {
-                "name": "Wood",
-                "unitRate": "0.15"
-            }
-        ]
-    },
-    "Yeast": {
-        "name": "Yeast",
-        "unitRate": "0.057142857142857",
-        "components": [
-            {
-                "name": "Berries",
-                "unitRate": "0.114285714285714"
-            },
-            {
-                "name": "Sugar",
-                "unitRate": "0.028571428571429"
-            }
-        ]
-    },
-    "Adhesive": {
-        "name": "Adhesive",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Chemicals",
-                "unitRate": "0.066666666666667"
-            },
-            {
-                "name": "Plastics",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Alternator": {
-        "name": "Alternator",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Copper Wire",
-                "unitRate": "0.066666666666667"
-            },
-            {
-                "name": "Steel",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Bag Of Chips": {
-        "name": "Bag Of Chips",
-        "unitRate": "0.05",
-        "components": [
-            {
-                "name": "Potato",
-                "unitRate": "0.05"
-            },
-            {
-                "name": "Parchment",
                 "unitRate": "0.05"
             }
         ]
     },
-    "Beef Stew": {
-        "name": "Beef Stew",
-        "unitRate": "0.044444444444445",
+    "Radio Receiver": {
+        "name": "Radio Receiver",
+        "unitRate": "0.033333333333333",
         "components": [
             {
-                "name": "Beef",
-                "unitRate": "0.111111111111111"
+                "name": "Diodes",
+                "unitRate": "0.133333333333333"
             },
             {
-                "name": "Potato",
-                "unitRate": "0.111111111111111"
-            },
-            {
-                "name": "Hops",
+                "name": "Furniture Base (S)",
                 "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Beer": {
-        "name": "Beer",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Wooden Barrels",
-                "unitRate": "0.022222222222222"
-            },
-            {
-                "name": "Hops",
-                "unitRate": "0.088888888888889"
-            },
-            {
-                "name": "Yeast",
-                "unitRate": "0.044444444444445"
-            }
-        ]
-    },
-    "Biofuel": {
-        "name": "Biofuel",
-        "unitRate": "0.08",
-        "components": [
-            {
-                "name": "Potato",
-                "unitRate": "0.2"
-            }
-        ]
-    },
-    "Bottles": {
-        "name": "Bottles",
-        "unitRate": "0.05",
-        "components": [
-            {
-                "name": "Glass",
-                "unitRate": "0.075"
-            }
-        ]
-    },
-    "Canned Fish": {
-        "name": "Canned Fish",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Cans",
-                "unitRate": "0.022222222222222"
-            },
-            {
-                "name": "Fish",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Canned Mutton": {
-        "name": "Canned Mutton",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Cans",
-                "unitRate": "0.022222222222222"
-            },
-            {
-                "name": "Mutton",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Cans": {
-        "name": "Cans",
-        "unitRate": "0.05",
-        "components": [
-            {
-                "name": "Steel",
-                "unitRate": "0.075"
-            }
-        ]
-    },
-    "Cardboard": {
-        "name": "Cardboard",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Heavy Pulp",
-                "unitRate": "0.111111111111111"
-            }
-        ]
-    },
-    "Cardboard Panels": {
-        "name": "Cardboard Panels",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Heavy Pulp",
-                "unitRate": "0.177777777777778"
-            }
-        ]
-    },
-    "Ceramics": {
-        "name": "Ceramics",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Glass",
-                "unitRate": "0.155555555555556"
-            },
-            {
-                "name": "Sand",
-                "unitRate": "0.088888888888889"
-            }
-        ]
-    },
-    "Cheese": {
-        "name": "Cheese",
-        "unitRate": "0.05",
-        "components": [
-            {
-                "name": "Milk",
-                "unitRate": "0.05"
-            },
-            {
-                "name": "Water",
-                "unitRate": "0.075"
-            }
-        ]
-    },
-    "Chicken Soup": {
-        "name": "Chicken Soup",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Chicken Meat",
-                "unitRate": "0.155555555555556"
-            },
-            {
-                "name": "Water",
-                "unitRate": "0.066666666666667"
-            },
-            {
-                "name": "Vegetables",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Chocolate Cake": {
-        "name": "Chocolate Cake",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Flour",
-                "unitRate": "0.111111111111111"
-            },
-            {
-                "name": "Eggs",
-                "unitRate": "0.044444444444445"
-            },
-            {
-                "name": "Cocoa",
-                "unitRate": "0.111111111111111"
-            }
-        ]
-    },
-    "Diodes": {
-        "name": "Diodes",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Copper Wire",
-                "unitRate": "0.088888888888889"
-            },
-            {
-                "name": "Glass",
-                "unitRate": "0.044444444444445"
-            }
-        ]
-    },
-    "Dough": {
-        "name": "Dough",
-        "unitRate": "0.05",
-        "components": [
-            {
-                "name": "Flour",
-                "unitRate": "0.1"
-            },
-            {
-                "name": "Water",
-                "unitRate": "0.025"
-            }
-        ]
-    },
-    "Furniture Base (L)": {
-        "name": "Furniture Base (L)",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Wooden Planks",
-                "unitRate": "0.111111111111111"
-            }
-        ]
-    },
-    "Furniture Base (S)": {
-        "name": "Furniture Base (S)",
-        "unitRate": "0.05",
-        "components": [
-            {
-                "name": "Wooden Planks",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Heavy Fabric": {
-        "name": "Heavy Fabric",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Fibres",
-                "unitRate": "0.044444444444445"
-            },
-            {
-                "name": "Dye",
-                "unitRate": "0.022222222222222"
-            },
-            {
-                "name": "Leather",
-                "unitRate": "0.044444444444445"
-            }
-        ]
-    },
-    "Light Bulbs": {
-        "name": "Light Bulbs",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Copper Wire",
-                "unitRate": "0.088888888888889"
-            },
-            {
-                "name": "Glass",
-                "unitRate": "0.088888888888889"
-            }
-        ]
-    },
-    "Light Fabric": {
-        "name": "Light Fabric",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Fibres",
-                "unitRate": "0.066666666666667"
-            },
-            {
-                "name": "Dye",
-                "unitRate": "0.022222222222222"
-            }
-        ]
-    },
-    "Paint": {
-        "name": "Paint",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Chemicals",
-                "unitRate": "0.088888888888889"
-            },
-            {
-                "name": "Dye",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Printed Paper": {
-        "name": "Printed Paper",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Parchment",
-                "unitRate": "0.088888888888889"
-            },
-            {
-                "name": "Ink",
-                "unitRate": "0.044444444444445"
             }
         ]
     },
@@ -932,244 +1138,8 @@
             }
         ]
     },
-    "Refrigerator": {
-        "name": "Refrigerator",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Copper Tubing",
-                "unitRate": "0.088888888888889"
-            },
-            {
-                "name": "Steel",
-                "unitRate": "0.044444444444445"
-            },
-            {
-                "name": "Gas",
-                "unitRate": "0.044444444444445"
-            }
-        ]
-    },
-    "Rubber Tubes": {
-        "name": "Rubber Tubes",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Rubber",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Steel Barrel": {
-        "name": "Steel Barrel",
-        "unitRate": "0.05",
-        "components": [
-            {
-                "name": "Steel",
-                "unitRate": "0.075"
-            }
-        ]
-    },
-    "Steel Frame": {
-        "name": "Steel Frame",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Steel",
-                "unitRate": "0.177777777777778"
-            }
-        ]
-    },
-    "Stovetop": {
-        "name": "Stovetop",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Steel",
-                "unitRate": "0.088888888888889"
-            },
-            {
-                "name": "Copper Tubing",
-                "unitRate": "0.044444444444445"
-            }
-        ]
-    },
-    "Tire": {
-        "name": "Tire",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Rubber",
-                "unitRate": "0.088888888888889"
-            }
-        ]
-    },
-    "Vodka": {
-        "name": "Vodka",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Potato",
-                "unitRate": "0.088888888888889"
-            },
-            {
-                "name": "Yeast",
-                "unitRate": "0.022222222222222"
-            },
-            {
-                "name": "Wooden Barrels",
-                "unitRate": "0.022222222222222"
-            }
-        ]
-    },
-    "Windows": {
-        "name": "Windows",
-        "unitRate": "0.044444444444445",
-        "components": [
-            {
-                "name": "Glass",
-                "unitRate": "0.155555555555556"
-            }
-        ]
-    },
-    "Wooden Barrels": {
-        "name": "Wooden Barrels",
-        "unitRate": "0.05",
-        "components": [
-            {
-                "name": "Wooden Planks",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Berry Pie": {
-        "name": "Berry Pie",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Berries",
-                "unitRate": "0.3"
-            },
-            {
-                "name": "Dough",
-                "unitRate": "0.2"
-            }
-        ]
-    },
-    "Books": {
-        "name": "Books",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Printed Paper",
-                "unitRate": "0.166666666666667"
-            }
-        ]
-    },
-    "Brandy": {
-        "name": "Brandy",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Wine",
-                "unitRate": "0.233333333333333"
-            },
-            {
-                "name": "Bottles",
-                "unitRate": "0.1"
-            }
-        ]
-    },
-    "Burgers": {
-        "name": "Burgers",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Dough",
-                "unitRate": "0.2"
-            },
-            {
-                "name": "Beef",
-                "unitRate": "0.1"
-            },
-            {
-                "name": "Vegetables",
-                "unitRate": "0.1"
-            }
-        ]
-    },
-    "Car Radiator": {
-        "name": "Car Radiator",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Radiator",
-                "unitRate": "0.066666666666667"
-            },
-            {
-                "name": "Steel",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Car Seat": {
-        "name": "Car Seat",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Furniture Base (S)",
-                "unitRate": "0.266666666666667"
-            },
-            {
-                "name": "Cotton",
-                "unitRate": "0.233333333333333"
-            }
-        ]
-    },
-    "Deluxe Books": {
-        "name": "Deluxe Books",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Printed Paper",
-                "unitRate": "0.166666666666667"
-            },
-            {
-                "name": "Leather",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Headlights": {
-        "name": "Headlights",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Light Bulbs",
-                "unitRate": "0.066666666666667"
-            },
-            {
-                "name": "Glass",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Interior Lining": {
-        "name": "Interior Lining",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Heavy Fabric",
-                "unitRate": "0.066666666666667"
-            },
-            {
-                "name": "Cardboard Panels",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Leather Furniture": {
-        "name": "Leather Furniture",
+    "Plastic Furniture": {
+        "name": "Plastic Furniture",
         "unitRate": "0.033333333333333",
         "components": [
             {
@@ -1177,68 +1147,8 @@
                 "unitRate": "0.166666666666667"
             },
             {
-                "name": "Leather",
-                "unitRate": "0.266666666666667"
-            }
-        ]
-    },
-    "Newspapers": {
-        "name": "Newspapers",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Printed Paper",
-                "unitRate": "0.166666666666667"
-            },
-            {
-                "name": "Ink",
-                "unitRate": "0.066666666666667"
-            }
-        ]
-    },
-    "Office Furniture": {
-        "name": "Office Furniture",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Furniture Base (L)",
-                "unitRate": "0.166666666666667"
-            },
-            {
-                "name": "Steel",
-                "unitRate": "0.166666666666667"
-            }
-        ]
-    },
-    "Orange Soda": {
-        "name": "Orange Soda",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Soda Warer",
+                "name": "Plastic",
                 "unitRate": "0.2"
-            },
-            {
-                "name": "Orange Juice",
-                "unitRate": "0.1"
-            },
-            {
-                "name": "Bottles",
-                "unitRate": "0.033333333333333"
-            }
-        ]
-    },
-    "Oven": {
-        "name": "Oven",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Stovetop",
-                "unitRate": "0.066666666666667"
-            },
-            {
-                "name": "Ceramics",
-                "unitRate": "0.066666666666667"
             }
         ]
     },
@@ -1260,41 +1170,37 @@
             }
         ]
     },
-    "Plastic Furniture": {
-        "name": "Plastic Furniture",
-        "unitRate": "0.033333333333333",
+    "Raw Rubber": {
+        "name": "Raw Rubber",
+        "unitRate": "0.066666666666667",
         "components": [
             {
-                "name": "Furniture Base (S)",
-                "unitRate": "0.166666666666667"
-            },
-            {
-                "name": "Plastic",
-                "unitRate": "0.2"
-            }
-        ]
-    },
-    "Radio Receiver": {
-        "name": "Radio Receiver",
-        "unitRate": "0.033333333333333",
-        "components": [
-            {
-                "name": "Diodes",
-                "unitRate": "0.133333333333333"
-            },
-            {
-                "name": "Furniture Base (S)",
+                "name": "Water",
                 "unitRate": "0.066666666666667"
             }
         ]
     },
-    "Summer Clothes": {
-        "name": "Summer Clothes",
-        "unitRate": "0.033333333333333",
+    "Printed Paper": {
+        "name": "Printed Paper",
+        "unitRate": "0.044444444444445",
         "components": [
             {
-                "name": "Light Fabric",
-                "unitRate": "0.066666666666667"
+                "name": "Parchment",
+                "unitRate": "0.088888888888889"
+            },
+            {
+                "name": "Ink",
+                "unitRate": "0.044444444444445"
+            }
+        ]
+    },
+    "Paint": {
+        "name": "Paint",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Chemicals",
+                "unitRate": "0.088888888888889"
             },
             {
                 "name": "Dye",
@@ -1316,6 +1222,24 @@
             }
         ]
     },
+    "Rolling Chassis": {
+        "name": "Rolling Chassis",
+        "unitRate": "0.013333333333333",
+        "components": [
+            {
+                "name": "Axles",
+                "unitRate": "0.04"
+            },
+            {
+                "name": "Combustion Engine",
+                "unitRate": "0.04"
+            },
+            {
+                "name": "Adhesive",
+                "unitRate": "0.12"
+            }
+        ]
+    },
     "Winter Clothes": {
         "name": "Winter Clothes",
         "unitRate": "0.033333333333333",
@@ -1327,6 +1251,135 @@
             {
                 "name": "Wool",
                 "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Soup": {
+        "name": "Soup",
+        "unitRate": "0.066666666666667",
+        "components": [
+            {
+                "name": "Vegetables",
+                "unitRate": "0.1"
+            },
+            {
+                "name": "Water",
+                "unitRate": "0.1"
+            }
+        ]
+    },
+    "Steel Frame": {
+        "name": "Steel Frame",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Steel",
+                "unitRate": "0.177777777777778"
+            }
+        ]
+    },
+    "Steel Barrel": {
+        "name": "Steel Barrel",
+        "unitRate": "0.05",
+        "components": [
+            {
+                "name": "Steel",
+                "unitRate": "0.075"
+            }
+        ]
+    },
+    "Sugar": {
+        "name": "Sugar",
+        "unitRate": "0.066666666666667",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Stovetop": {
+        "name": "Stovetop",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Steel",
+                "unitRate": "0.088888888888889"
+            },
+            {
+                "name": "Copper Tubing",
+                "unitRate": "0.044444444444445"
+            }
+        ]
+    },
+    "Soda Water": {
+        "name": "Soda Water",
+        "unitRate": "0.066666666666667",
+        "components": [
+            {
+                "name": "Sugar",
+                "unitRate": "0.044444444444445"
+            },
+            {
+                "name": "Water",
+                "unitRate": "0.022222222222222"
+            }
+        ]
+    },
+    "Sand": {
+        "name": "Sand",
+        "unitRate": "0.1",
+        "components": []
+    },
+    "Steel": {
+        "name": "Steel",
+        "unitRate": "0.085714285714286",
+        "components": [
+            {
+                "name": "Iron Ore",
+                "unitRate": "0.114285714285714"
+            },
+            {
+                "name": "Coal",
+                "unitRate": "0.057142857142857"
+            }
+        ]
+    },
+    "Summer Clothes": {
+        "name": "Summer Clothes",
+        "unitRate": "0.033333333333333",
+        "components": [
+            {
+                "name": "Light Fabric",
+                "unitRate": "0.066666666666667"
+            },
+            {
+                "name": "Dye",
+                "unitRate": "0.066666666666667"
+            }
+        ]
+    },
+    "Yeast": {
+        "name": "Yeast",
+        "unitRate": "0.057142857142857",
+        "components": [
+            {
+                "name": "Berries",
+                "unitRate": "0.114285714285714"
+            },
+            {
+                "name": "Sugar",
+                "unitRate": "0.028571428571429"
+            }
+        ]
+    },
+    "Wooden Barrels": {
+        "name": "Wooden Barrels",
+        "unitRate": "0.05",
+        "components": [
+            {
+                "name": "Wooden Planks",
+                "unitRate": "0.05"
             }
         ]
     },
@@ -1358,142 +1411,89 @@
             }
         ]
     },
-    "Barley Whiskey": {
-        "name": "Barley Whiskey",
+    "Wool": {
+        "name": "Wool",
         "unitRate": "0.033333333333333",
         "components": [
             {
-                "name": "Wheat",
-                "unitRate": "0.3"
-            },
-            {
-                "name": "Wooden Barrels",
-                "unitRate": "0.2"
-            },
-            {
-                "name": "Yeast",
-                "unitRate": "0.2"
-            }
-        ]
-    },
-    "Axles": {
-        "name": "Axles",
-        "unitRate": "0.016666666666667",
-        "components": [
-            {
-                "name": "Steel Frame",
-                "unitRate": "0.05"
-            },
-            {
-                "name": "Tires",
-                "unitRate": "0.15"
-            },
-            {
-                "name": "Steel",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Body Chassis": {
-        "name": "Body Chassis",
-        "unitRate": "0.013333333333333",
-        "components": [
-            {
-                "name": "Exterior Body",
-                "unitRate": "0.04"
-            },
-            {
-                "name": "Interior Body",
-                "unitRate": "0.04"
-            },
-            {
-                "name": "Adhesive",
-                "unitRate": "0.12"
-            }
-        ]
-    },
-    "Car Prototype": {
-        "name": "Car Prototype",
-        "unitRate": "0.002777777777778",
-        "components": [
-            {
-                "name": "Body Chassis",
-                "unitRate": "0.008333333333333"
-            },
-            {
-                "name": "Rolling Chassis",
-                "unitRate": "0.008333333333333"
-            }
-        ]
-    },
-    "Combustion Engine": {
-        "name": "Combustion Engine",
-        "unitRate": "0.016666666666667",
-        "components": [
-            {
-                "name": "Biofuel",
-                "unitRate": "0.15"
-            },
-            {
-                "name": "Alternator",
-                "unitRate": "0.05"
-            },
-            {
-                "name": "Car Radiator",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Exterior Body": {
-        "name": "Exterior Body",
-        "unitRate": "0.016666666666667",
-        "components": [
-            {
-                "name": "Windows",
-                "unitRate": "0.1"
-            },
-            {
-                "name": "Headlights",
+                "name": "Water",
                 "unitRate": "0.033333333333333"
             },
             {
-                "name": "Paint",
-                "unitRate": "0.05"
-            }
-        ]
-    },
-    "Interior Body": {
-        "name": "Interior Body",
-        "unitRate": "0.016666666666667",
-        "components": [
-            {
-                "name": "Radio Receiver",
-                "unitRate": "0.05"
-            },
-            {
-                "name": "Interior Lining",
-                "unitRate": "0.1"
-            },
-            {
-                "name": "Car Seat",
+                "name": "Wheat",
                 "unitRate": "0.1"
             }
         ]
     },
-    "Rolling Chassis": {
-        "name": "Rolling Chassis",
-        "unitRate": "0.013333333333333",
+    "Windows": {
+        "name": "Windows",
+        "unitRate": "0.044444444444445",
         "components": [
             {
-                "name": "Axles",
-                "unitRate": "0.04"
+                "name": "Glass",
+                "unitRate": "0.155555555555556"
+            }
+        ]
+    },
+    "Water": {
+        "name": "Water",
+        "unitRate": "0.1",
+        "components": []
+    },
+    "Vodka": {
+        "name": "Vodka",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Potato",
+                "unitRate": "0.088888888888889"
             },
             {
-                "name": "Combustion Engine",
-                "unitRate": "0.04"
+                "name": "Yeast",
+                "unitRate": "0.022222222222222"
             },
             {
-                "name": "Adhesive",
+                "name": "Wooden Barrels",
+                "unitRate": "0.022222222222222"
+            }
+        ]
+    },
+    "Tire": {
+        "name": "Tire",
+        "unitRate": "0.044444444444445",
+        "components": [
+            {
+                "name": "Rubber",
+                "unitRate": "0.088888888888889"
+            }
+        ]
+    },
+    "Wooden Planks": {
+        "name": "Wooden Planks",
+        "unitRate": "0.075",
+        "components": [
+            {
+                "name": "Wood",
+                "unitRate": "0.15"
+            }
+        ]
+    },
+    "Wheat": {
+        "name": "Wheat",
+        "unitRate": "0.1",
+        "components": [
+            {
+                "name": "Water",
+                "unitRate": "0.05"
+            }
+        ]
+    },
+    "Wine": {
+        "name": "Wine",
+        "unitRate": "0.06",
+        "components": [
+            {
+                "name": "Grapes",
                 "unitRate": "0.12"
             }
         ]

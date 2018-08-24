@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 /*
-A product looks like:
+A raw product looks like:
 {
     name: 'Some Product',
     unitRate: 0.1,
@@ -57,10 +57,10 @@ function createDict(carry, product) {
 }
 
 const ratesData = fs
-    .readFileSync('./../data/roiRates.csv')
+    .readFileSync('./roiRates.csv')
     .toString()
     .split('\n')
-    .map(parseProductDefinition)
+	.map(parseProductDefinition)
     .reduce(createDict, {});
 
 console.log(JSON.stringify(ratesData, null, 4));

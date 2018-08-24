@@ -11,6 +11,20 @@ import { toggleSelectedProduct } from '../state/modules/products/actions/toggleS
 import { ProductSelectorColumn as ProductSelectorColumnComponent } from '../components/Columns/ProductSelectorColumn';
 import { Maybe } from '../util/Maybe';
 
+function alphabetize(p1: Product, p2: Product): number {
+	console.log(p1, p2);
+
+	const p1Name = p1.name.toLowerCase()[0];
+	const p2Name = p2.name.toLowerCase()[0];
+
+	if (p1Name < p2Name)
+		return -1
+	else if (p1Name > p2Name)
+		return 1;
+
+	return 0;
+}
+
 function maybeFilterProductsList(maybeSearchValue: Maybe<string>) {
 	return (products: Product[]): Product[] => {
 		return maybeSearchValue.with({
@@ -37,9 +51,15 @@ function mapStateToProps(state: ReduxState) {
 		.map(maybeFilterProductsList(maybeSearchValue));
 
 	return {
-		productsList: productsList,
-		searchValue: state.products.searchValue,
-		selectedProducts: state.products.productBlocks.map(b => b.product)
+		productsList: productsList
+			.map(ps => ps.sort(alphabetize)),
+		searchValue: state
+			.products
+			.searchValue,
+		selectedProducts: state
+			.products
+			.productBlocks
+			.map(b => b.product)
 	};
 }
 
