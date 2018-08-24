@@ -5,17 +5,11 @@ import { Product } from '../../data/types';
 import { productListContainsProduct } from '../../data/productList';
 import { Response } from '../../util/Response';
 import { Maybe } from '../../util/Maybe';
+import { FullSizeLoader } from '../widgets/FullSizeLoader';
+import { FullSizeError } from '../widgets/FullSizeError';
 
 const productSelectorColumnStyles = css`
 	flex: 1;
-`;
-
-const columnContentsStyles = css`
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	border: 1px solid #EAEAEA;
-	height: 100%;
 `;
 
 const searchBoxStyles = css`
@@ -62,12 +56,9 @@ interface OwnProps {
 export function ProductSelectorColumn(props: OwnProps) {
 	const isSelected = productListContainsProduct(props.selectedProducts);
 
-	return props.productsList.with({
-		loading: function() {
-			return (
-				<p>Loading...</p>
-			);
-		},
+	const columnContents = props.productsList.with({
+		loading: () => <FullSizeLoader />,
+		error: (err) => <FullSizeError errorMessage={err} />,
 		ready: function(products: Product[]) {
 			const productItems = products.map((p, i) => {
 				const cssClassName = isSelected(p) !== -1
@@ -85,26 +76,25 @@ export function ProductSelectorColumn(props: OwnProps) {
 			});
 
 			return (
-				<div className={`column ${productSelectorColumnStyles}`}>
-					<h2>Product List</h2>
-					<section className={columnContentsStyles}>
-						<input
-							className={searchBoxStyles}
-							type="text"
-							value={props.searchValue.withDefault('')}
-							placeholder="Search..."
-							onChange={props.onSetSearchValue} />
-						<ul className={productListStyles}>
-							{productItems}
-						</ul>
-					</section>
-				</div>
-			);
-		},
-		error: function(err: string) {
-			return (
-				<p>Something went wrong: {err}</p>
+				<ul className={productListStyles}>
+					{productItems}
+				</ul>
 			);
 		}
 	});
+
+	return (
+		<div className={`column ${productSelectorColumnStyles}`}>
+			<h2>Product List</h2>
+			<section>
+				<input
+					className={searchBoxStyles}
+					type="text"
+					value={props.searchValue.withDefault('')}
+					placeholder="Search..."
+					onChange={props.onSetSearchValue} />
+				{columnContents}
+			</section>
+		</div>
+	);
 }

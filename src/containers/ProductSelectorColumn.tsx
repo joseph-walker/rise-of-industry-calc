@@ -8,7 +8,7 @@ import { getProducts } from '../data/getProducts';
 import { ProductsAction } from '../state/modules/products/reducer';
 import { setSearchValue } from '../state/modules/products/actions/search';
 import { toggleSelectedProduct } from '../state/modules/products/actions/toggleSelected';
-import { ProductSelectorColumn as ProductSelectorColumnComponent } from '../components/Columns/ProductSelectorColumn';
+import { ProductSelectorColumn as ProductSelectorColumnComponent } from '../components/columns/ProductSelectorColumn';
 import { Maybe } from '../util/Maybe';
 
 function alphabetize(p1: Product, p2: Product): number {
