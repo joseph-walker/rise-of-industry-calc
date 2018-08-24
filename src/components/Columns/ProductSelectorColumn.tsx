@@ -70,7 +70,7 @@ export function ProductSelectorColumn(props: OwnProps) {
 		},
 		ready: function(products: Product[]) {
 			const productItems = products.map((p, i) => {
-				const cssClassName = isSelected(p)
+				const cssClassName = isSelected(p) !== -1
 					? productListItemSelectedStyles
 					: productListItemStyles;
 

@@ -1,5 +1,5 @@
 import { LoopReducer, loop, Cmd } from 'redux-loop';
-import { without, append } from 'ramda';
+import { remove, append } from 'ramda';
 
 import { productListContainsProduct } from '../../../data/productList';
 import { FetchRatesActionTypes, FetchRatesAction, fetchRatesSuccess, fetchRatesFail } from './actions/fetchRates';
@@ -8,7 +8,7 @@ import { ToggleActionTypes, ToggleAction } from './actions/toggleSelected';
 import { runFetchRates } from './commands/runFetchRates';
 import { Response } from './../../../util/Response';
 import { Maybe } from './../../../util/Maybe';
-import { Chunks, Product } from './../../../data/types';
+import { Chunks, ProductBlock } from './../../../data/types';
 
 export type ProductsAction
 	= FetchRatesAction
@@ -17,13 +17,13 @@ export type ProductsAction
 
 export interface ProductsState {
 	productChunks: Response<Chunks, string>,
-	selectedProducts: Product[],
+	productBlocks: ProductBlock[],
 	searchValue: Maybe<string>
 }
 
 export const initialState: ProductsState = {
 	productChunks: Response.Loading(),
-	selectedProducts: [],
+	productBlocks: [],
 	searchValue: Maybe.Nothing()
 }
 
@@ -59,14 +59,15 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 			};
 		}
 		case ToggleActionTypes.ToggleSelectedProduct: {
+			const indexOfProduct = productListContainsProduct(state.productBlocks.map(b => b.product))(action.product);
+
 			return {
 				...state,
-				// Toggle the given product in the selectedProducts list
-				selectedProducts: productListContainsProduct(state.selectedProducts)(action.product)
+				productBlocks: indexOfProduct !== -1
 					// Product is selected -- Remove it
-					? without([action.product], state.selectedProducts)
+					? remove(indexOfProduct, 1, state.productBlocks)
 					// Product is not selected -- Add it
-					: append(action.product, state.selectedProducts)
+					: append({ product: action.product, requiredRate: Maybe.Nothing<number>() }, state.productBlocks)
 			};
 		}
 		default: {

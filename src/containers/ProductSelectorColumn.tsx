@@ -39,7 +39,7 @@ function mapStateToProps(state: ReduxState) {
 	return {
 		productsList: productsList,
 		searchValue: state.products.searchValue,
-		selectedProducts: state.products.selectedProducts
+		selectedProducts: state.products.productBlocks.map(b => b.product)
 	};
 }
 

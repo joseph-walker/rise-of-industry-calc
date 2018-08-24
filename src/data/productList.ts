@@ -1,7 +1,7 @@
-import { contains, memoize } from 'ramda';
+import { indexOf, memoize } from 'ramda';
 
 import { Product } from './types';
 
-export const productListContainsProduct = (productList: Product[]) => memoize((p: Product): boolean => {
-	return contains(p, productList);
+export const productListContainsProduct = (productList: Product[]) => memoize((p: Product): number => {
+	return indexOf(p, productList);
 });
