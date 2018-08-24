@@ -12,8 +12,6 @@ import { ProductSelectorColumn as ProductSelectorColumnComponent } from '../comp
 import { Maybe } from '../util/Maybe';
 
 function alphabetize(p1: Product, p2: Product): number {
-	console.log(p1, p2);
-
 	const p1Name = p1.name.toLowerCase()[0];
 	const p2Name = p2.name.toLowerCase()[0];
 
