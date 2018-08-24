@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from 'emotion';
 
 import { Product } from '../../data/types';
+import { productListContainsProduct } from '../../data/productList';
 import { Response } from '../../util/Response';
 import { Maybe } from '../../util/Maybe';
 
@@ -28,28 +29,39 @@ const productListStyles = css`
 	display: block;
 	height: 100%;
 	overflow-y: scroll;
+`;
 
-	& li {
-		display: flex;
-		margin: 3px 3px 0 3px;
-		background-color: #f7f7f7;
-		border: 1px solid #F5F5F5;
-		padding: 12px;
-		cursor: pointer;
-	}
+const productListItemStyles = css`
+	display: flex;
+	margin: 3px 3px 0 3px;
+	background-color: #f7f7f7;
+	border: 1px solid #F5F5F5;
+	padding: 12px;
+	cursor: pointer;
 
-	& li:last-child {
+	&:last-child {
 		margin-bottom: 3px;
 	}
+`;
+
+const productListItemSelectedStyles = css`
+	${productListItemStyles}
+	background-color: #5028f1;
+	border-color: #4d32b9;
+	color: #FFF;
 `;
 
 interface OwnProps {
 	productsList: Response<Product[], string>,
 	searchValue: Maybe<string>,
-	onSetSearchValue: (e: React.FormEvent<HTMLInputElement>) => void
+	selectedProducts: Product[],
+	onSetSearchValue: (e: React.FormEvent<HTMLInputElement>) => void,
+	onSelectProduct: (p: Product) => void
 }
 
 export function ProductSelectorColumn(props: OwnProps) {
+	const isSelected = productListContainsProduct(props.selectedProducts);
+
 	return props.productsList.with({
 		loading: function() {
 			return (
@@ -57,7 +69,20 @@ export function ProductSelectorColumn(props: OwnProps) {
 			);
 		},
 		ready: function(products: Product[]) {
-			const productItems = products.map((p, i) => <li key={`product-${i}`}>{p.name}</li>);
+			const productItems = products.map((p, i) => {
+				const cssClassName = isSelected(p)
+					? productListItemSelectedStyles
+					: productListItemStyles;
+
+				return (
+					<li
+						className={cssClassName}
+						key={`product-${i}`}
+						onClick={() => props.onSelectProduct(p)}>
+						{p.name}
+					</li>
+				);
+			});
 
 			return (
 				<div className={`column ${productSelectorColumnStyles}`}>

@@ -26,6 +26,8 @@ injectGlobal`
 	}
 
 	body {
+		display: block;
+		padding: 24px;
 		background-color: rgb(242, 242, 242);
 		font-family: 'Raleway', sans-serif;
 		color: #333;

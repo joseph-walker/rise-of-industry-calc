@@ -7,6 +7,7 @@ import { Product } from '../data/types';
 import { getProducts } from '../data/getProducts';
 import { ProductsAction } from '../state/modules/products/reducer';
 import { setSearchValue } from '../state/modules/products/actions/search';
+import { toggleSelectedProduct } from '../state/modules/products/actions/toggleSelected';
 import { ProductSelectorColumn as ProductSelectorColumnComponent } from '../components/Columns/ProductSelectorColumn';
 import { Maybe } from '../util/Maybe';
 
@@ -32,17 +33,20 @@ function mapStateToProps(state: ReduxState) {
 	const productsList = state
 		.products
 		.productChunks
-		.map(getProducts);
+		.map(getProducts)
+		.map(maybeFilterProductsList(maybeSearchValue));
 
 	return {
-		productsList: productsList.map(maybeFilterProductsList(maybeSearchValue)),
-		searchValue: state.products.searchValue
+		productsList: productsList,
+		searchValue: state.products.searchValue,
+		selectedProducts: state.products.selectedProducts
 	};
 }
 
 function mapDispatchToProps(dispatch: Dispatch<ProductsAction>) {
 	return {
-		onSetSearchValue: (e: React.FormEvent<HTMLInputElement>) => dispatch(setSearchValue(e.currentTarget.value))
+		onSetSearchValue: (e: React.FormEvent<HTMLInputElement>) => dispatch(setSearchValue(e.currentTarget.value)),
+		onSelectProduct: (p: Product) => dispatch(toggleSelectedProduct(p))
 	};
 }
 
