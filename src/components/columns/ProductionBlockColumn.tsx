@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from 'emotion';
+import { Lens, lensIndex } from 'ramda';
 
 import { ProductionBlock as IProductionBlock, Product } from '../../data/types';
 import { ProductionBlock } from '../widgets/ProductionBlock';
@@ -24,14 +25,26 @@ const productBlockStyles = css`
 
 interface OwnProps {
 	productBlocks: IProductionBlock[],
-	onRemoveProduct: (p: Product) => void
+	onRemoveProduct: (p: Product) => void,
+	onUpdateBlockValue: (i: Lens) => (v: Lens, s: string) => void
 }
 
 export function ProductionBlockColumn(props: OwnProps) {
+	function renderBlock(b: IProductionBlock, i: number) {
+		return (
+			<li>
+				<ProductionBlock
+					onRemoveProduct={props.onRemoveProduct}
+					onUpdateBlockValue={props.onUpdateBlockValue(lensIndex(i))}
+					block={b} />
+			</li>
+		);
+	}
+
 	const columnContents = props.productBlocks.length
 		? (
 			<ul className={productBlockStyles}>
-				{props.productBlocks.map(b => <li><ProductionBlock onRemoveProduct={props.onRemoveProduct} block={b} /></li>)}
+				{props.productBlocks.map(renderBlock)}
 			</ul>
 		)
 		: <FullSizeNotification

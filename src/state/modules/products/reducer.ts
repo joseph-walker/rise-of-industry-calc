@@ -1,10 +1,11 @@
 import { LoopReducer, loop, Cmd } from 'redux-loop';
-import { remove, append } from 'ramda';
+import { Lens, compose, lensProp, set, remove, append } from 'ramda';
 
 import { productListContainsProduct } from '../../../data/productList';
 import { FetchRatesActionTypes, FetchRatesAction, fetchRatesSuccess, fetchRatesFail } from './actions/fetchRates';
 import { SearchActionTypes, SearchAction } from './actions/search';
 import { ToggleActionTypes, ToggleAction } from './actions/toggleSelected';
+import { UpdateProductionBlockTypes, UpdateProductionBlockAction } from './actions/updateProductionBlock';
 import { runFetchRates } from './commands/runFetchRates';
 import { Response } from './../../../util/Response';
 import { Maybe } from './../../../util/Maybe';
@@ -14,6 +15,7 @@ export type ProductsAction
 	= FetchRatesAction
 	| SearchAction
 	| ToggleAction
+	| UpdateProductionBlockAction
 
 export interface ProductsState {
 	productChunks: Response<Chunks, string>,
@@ -76,6 +78,14 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 					// Product is not selected -- Add it
 					: append(emptyProductBlock, state.productBlocks)
 			};
+		}
+		case UpdateProductionBlockTypes.UpdateProductionBlock: {
+			const productionBlockLens = compose(lensProp('productBlocks'), action.blockPath) as Lens;
+			const newValue = action.value !== ''
+				? Maybe.Just(action.value)
+				: Maybe.Nothing();
+
+			return set(productionBlockLens, newValue, state);
 		}
 		default: {
 			return state;

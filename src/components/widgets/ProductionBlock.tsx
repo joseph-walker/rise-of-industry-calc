@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from 'emotion';
+import { Lens, lensProp } from 'ramda';
 
 import { ProductionBlock as IProductionBlock, Product } from '../../data/types';
 
@@ -58,7 +59,8 @@ const deleteButtonStyles = css`
 
 interface OwnProps {
 	block: IProductionBlock,
-	onRemoveProduct: (p: Product) => void
+	onRemoveProduct: (p: Product) => void,
+	onUpdateBlockValue: (l: Lens, s: string) => void
 }
 
 export function ProductionBlock(props: OwnProps) {
@@ -78,12 +80,14 @@ export function ProductionBlock(props: OwnProps) {
 				<span className={labelStyles}>Output:</span>
 				<input
 					className={inputStyles}
+					onChange={(e) => props.onUpdateBlockValue(lensProp('rate'), e.currentTarget.value)}
 					value={props.block.requiredRate.rate.map(toString).withDefault('')}
 					type="text"
 					placeholder="0" />
 				<span>Every</span>
 				<input
 					className={inputStyles}
+					onChange={(e) => props.onUpdateBlockValue(lensProp('days'), e.currentTarget.value)}
 					value={props.block.requiredRate.days.map(toString).withDefault('')}
 					type="text"
 					placeholder="0" />
