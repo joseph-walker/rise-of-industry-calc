@@ -6,6 +6,10 @@ export enum ButtonStyle {
 	danger
 }
 
+interface StyledButtonProps {
+	buttonStyle: ButtonStyle
+}
+
 function backgroundColor({ buttonStyle }: StyledButtonProps): string {
 	return ({
 		[ButtonStyle.default]: '#454ea0',
@@ -18,10 +22,6 @@ function borderColor({ buttonStyle }: StyledButtonProps): string {
 		[ButtonStyle.default]: '#3d4590',
 		[ButtonStyle.danger]: '#dc632d'
 	})[buttonStyle];
-}
-
-interface StyledButtonProps {
-	buttonStyle: ButtonStyle
 }
 
 const StyledButton = styled('button')`

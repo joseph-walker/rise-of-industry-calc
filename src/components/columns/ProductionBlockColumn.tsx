@@ -3,6 +3,7 @@ import { css } from 'emotion';
 
 import { ProductionBlock as IProductionBlock } from '../../data/types';
 import { ProductionBlock } from '../widgets/ProductionBlock';
+import { FullSizeNotification, NotificationType } from '../widgets/FullSizeNotification';
 
 const productionBlockColumnStyles = css`
 	flex: 1;
@@ -32,7 +33,9 @@ export function ProductionBlockColumn(props: OwnProps) {
 				{props.productBlocks.map(b => <li><ProductionBlock block={b} /></li>)}
 			</ul>
 		)
-		: <span>Nothing</span>;
+		: <FullSizeNotification
+			type={NotificationType.notification}
+			message="Select some products on the left to create a production block" />;
 
 	return (
 		<div className={`column ${productionBlockColumnStyles}`}>

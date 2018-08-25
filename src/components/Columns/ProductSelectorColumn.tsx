@@ -6,7 +6,7 @@ import { productListContainsProduct } from '../../data/productList';
 import { Response } from '../../util/Response';
 import { Maybe } from '../../util/Maybe';
 import { FullSizeLoader } from '../widgets/FullSizeLoader';
-import { FullSizeError } from '../widgets/FullSizeError';
+import { FullSizeNotification, NotificationType } from '../widgets/FullSizeNotification';
 
 const productSelectorColumnStyles = css`
 	flex: 1;
@@ -58,7 +58,7 @@ export function ProductSelectorColumn(props: OwnProps) {
 
 	const columnContents = props.productsList.with({
 		loading: () => <FullSizeLoader />,
-		error: (err) => <FullSizeError errorMessage={err} />,
+		error: (err) => <FullSizeNotification message={err} type={NotificationType.error} />,
 		ready: function(products: Product[]) {
 			const productItems = products.map((p, i) => {
 				const cssClassName = isSelected(p) !== -1
