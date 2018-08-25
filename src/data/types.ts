@@ -8,8 +8,8 @@ export interface Product {
 }
 
 export interface OutputRequirements {
-	rate: Maybe<number>,
-	days: Maybe<number>
+	rate: Maybe<string>,
+	days: Maybe<string>
 }
 
 export interface ProductionBlock {

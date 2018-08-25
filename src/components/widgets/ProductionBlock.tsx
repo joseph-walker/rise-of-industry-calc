@@ -64,8 +64,6 @@ interface OwnProps {
 }
 
 export function ProductionBlock(props: OwnProps) {
-	const toString = (n: number) => n.toString();
-
 	return (
 		<>
 			<div className={headerStyles}>
@@ -81,14 +79,14 @@ export function ProductionBlock(props: OwnProps) {
 				<input
 					className={inputStyles}
 					onChange={(e) => props.onUpdateBlockValue(lensProp('rate'), e.currentTarget.value)}
-					value={props.block.requiredRate.rate.map(toString).withDefault('')}
+					value={props.block.requiredRate.rate.withDefault('')}
 					type="text"
 					placeholder="0" />
 				<span>Every</span>
 				<input
 					className={inputStyles}
 					onChange={(e) => props.onUpdateBlockValue(lensProp('days'), e.currentTarget.value)}
-					value={props.block.requiredRate.days.map(toString).withDefault('')}
+					value={props.block.requiredRate.days.withDefault('')}
 					type="text"
 					placeholder="0" />
 				<span>Days</span>
