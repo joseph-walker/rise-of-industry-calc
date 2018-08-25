@@ -94,7 +94,7 @@ h1 {
 }
 
 .column.blocks {
-	flex: 2;
+	flex: 1;
 }
 
 .column.requirements {
@@ -127,4 +127,47 @@ h1 {
     background-color: #5028f1;
 	border-color: #4d32b9;
 	color: #FFF;
+}
+
+.blocks-list li {
+	display: block;
+	padding: 12px;
+    margin: 3px 3px 0 3px;
+    background-color: #f7f7f7;
+    border: 1px solid #F5F5F5;
+}
+
+.block-header {
+	display: flex;
+	margin-bottom: 8px;
+}
+
+.block-header em {
+	font-weight: bold;
+}
+
+.block-header button {
+	margin-left: auto;
+}
+
+.block-body {
+	display: flex;
+}
+
+.block-body span {
+	line-height: 28px;
+}
+
+.block-body .label {
+	margin-right: auto;
+}
+
+.block-body input {
+	line-height: 28px;
+	width: 42px;
+	padding: 0 6px;
+	text-align: center;
+	margin: 0 6px;
+	background-color: #FFF;
+   	border: 1px solid #eaeaea;
 }

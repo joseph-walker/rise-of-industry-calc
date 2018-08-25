@@ -40,8 +40,8 @@ const productListItemStyles = css`
 
 const productListItemSelectedStyles = css`
 	${productListItemStyles}
-	background-color: #5028f1;
-	border-color: #4d32b9;
+	background-color: #454ea0;
+	border-color: #3d4590;
 	color: #FFF;
 `;
 

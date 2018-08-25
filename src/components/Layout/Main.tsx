@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from 'emotion';
 
 import { ProductSelectorColumn } from '../../containers/ProductSelectorColumn';
-import { ProductionBlockColumn } from '../columns/ProductionBlockColumn';
+import { ProductionBlockColumn } from '../../containers/ProductionBlockColumn';
 import { RecipeRequirementsColumn } from '../columns/RecipeRequirementsColumn';
 
 const mainContainerStyles = css`

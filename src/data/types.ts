@@ -7,9 +7,14 @@ export interface Product {
 	outputRate: Rate
 }
 
-export interface ProductBlock {
+export interface OutputRequirements {
+	rate: Maybe<number>,
+	days: Maybe<number>
+}
+
+export interface ProductionBlock {
 	product: Product,
-	requiredRate: Maybe<Rate>
+	requiredRate: OutputRequirements
 }
 
 export interface Recipe {

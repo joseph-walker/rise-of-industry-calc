@@ -8,7 +8,7 @@ import { ToggleActionTypes, ToggleAction } from './actions/toggleSelected';
 import { runFetchRates } from './commands/runFetchRates';
 import { Response } from './../../../util/Response';
 import { Maybe } from './../../../util/Maybe';
-import { Chunks, ProductBlock } from './../../../data/types';
+import { Chunks, ProductionBlock } from './../../../data/types';
 
 export type ProductsAction
 	= FetchRatesAction
@@ -17,7 +17,7 @@ export type ProductsAction
 
 export interface ProductsState {
 	productChunks: Response<Chunks, string>,
-	productBlocks: ProductBlock[],
+	productBlocks: ProductionBlock[],
 	searchValue: Maybe<string>
 }
 
@@ -60,6 +60,13 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 		}
 		case ToggleActionTypes.ToggleSelectedProduct: {
 			const indexOfProduct = productListContainsProduct(state.productBlocks.map(b => b.product))(action.product);
+			const emptyProductBlock: ProductionBlock = {
+				product: action.product,
+				requiredRate: {
+					rate: Maybe.Nothing<number>(),
+					days: Maybe.Just(15)
+				}
+			}
 
 			return {
 				...state,
@@ -67,7 +74,7 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 					// Product is selected -- Remove it
 					? remove(indexOfProduct, 1, state.productBlocks)
 					// Product is not selected -- Add it
-					: append({ product: action.product, requiredRate: Maybe.Nothing<number>() }, state.productBlocks)
+					: append(emptyProductBlock, state.productBlocks)
 			};
 		}
 		default: {
