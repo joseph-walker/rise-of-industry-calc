@@ -23,7 +23,7 @@ export class Maybe<T> implements Monad<T> {
 		return new Maybe(MaybeType.Nothing, null);
 	}
 
-	static pure<T>(x: T): Maybe<T> {
+	public static pure<T>(x: T): Maybe<T> {
 		return Maybe.Just(x);
 	}
 
