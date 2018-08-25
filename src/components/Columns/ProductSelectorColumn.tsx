@@ -76,9 +76,17 @@ export function ProductSelectorColumn(props: OwnProps) {
 			});
 
 			return (
-				<ul className={productListStyles}>
-					{productItems}
-				</ul>
+				<>
+					<input
+						className={searchBoxStyles}
+						type="text"
+						value={props.searchValue.withDefault('')}
+						placeholder="Search..."
+						onChange={props.onSetSearchValue} />
+					<ul className={productListStyles}>
+						{productItems}
+					</ul>
+				</>
 			);
 		}
 	});
@@ -87,12 +95,6 @@ export function ProductSelectorColumn(props: OwnProps) {
 		<div className={`column ${productSelectorColumnStyles}`}>
 			<h2>Product List</h2>
 			<section>
-				<input
-					className={searchBoxStyles}
-					type="text"
-					value={props.searchValue.withDefault('')}
-					placeholder="Search..."
-					onChange={props.onSetSearchValue} />
 				{columnContents}
 			</section>
 		</div>
