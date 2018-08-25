@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { css } from 'emotion';
 
-import { ProductionBlock as IProductionBlock } from '../../data/types';
+import { ProductionBlock as IProductionBlock, Product } from '../../data/types';
 
 const headerStyles = css`
 	display: flex;
 	margin-bottom: 8px;
+	position: relative;
 
 	& em {
 		font-weight: bold;
@@ -40,11 +41,24 @@ const inputStyles = css`
 `;
 
 const deleteButtonStyles = css`
+	cursor: pointer;
 	color: #999;
+	transition: color 0.05s ease-in-out;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    line-height: 32px;
+    width: 32px;
+    text-align: center;
+
+	&:hover {
+		color: #f16628;
+	}
 `;
 
 interface OwnProps {
-	block: IProductionBlock
+	block: IProductionBlock,
+	onRemoveProduct: (p: Product) => void
 }
 
 export function ProductionBlock(props: OwnProps) {
@@ -54,7 +68,11 @@ export function ProductionBlock(props: OwnProps) {
 		<>
 			<div className={headerStyles}>
 				<em>{props.block.product.name}</em>
-				<button className={deleteButtonStyles}><i className="fas fa-times"></i></button>
+				<button
+					onClick={() => props.onRemoveProduct(props.block.product)}
+					className={deleteButtonStyles}>
+					<i className="fas fa-times"></i>
+				</button>
 			</div>
 			<div className={bodyStyles}>
 				<span className={labelStyles}>Output:</span>

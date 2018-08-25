@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from 'emotion';
 
-import { ProductionBlock as IProductionBlock } from '../../data/types';
+import { ProductionBlock as IProductionBlock, Product } from '../../data/types';
 import { ProductionBlock } from '../widgets/ProductionBlock';
 import { FullSizeNotification, NotificationType } from '../widgets/FullSizeNotification';
 
@@ -23,14 +23,15 @@ const productBlockStyles = css`
 `;
 
 interface OwnProps {
-	productBlocks: IProductionBlock[]
+	productBlocks: IProductionBlock[],
+	onRemoveProduct: (p: Product) => void
 }
 
 export function ProductionBlockColumn(props: OwnProps) {
 	const columnContents = props.productBlocks.length
 		? (
 			<ul className={productBlockStyles}>
-				{props.productBlocks.map(b => <li><ProductionBlock block={b} /></li>)}
+				{props.productBlocks.map(b => <li><ProductionBlock onRemoveProduct={props.onRemoveProduct} block={b} /></li>)}
 			</ul>
 		)
 		: <FullSizeNotification
