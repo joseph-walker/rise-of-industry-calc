@@ -2,9 +2,9 @@ import * as React from 'react';
 import { css } from 'emotion';
 import { Lens, lensIndex } from 'ramda';
 
-import { ProductionBlock as IProductionBlock, Product } from '../../data/types';
-import { ProductionBlock } from '../widgets/ProductionBlock';
-import { FullSizeNotification, NotificationType } from '../widgets/FullSizeNotification';
+import { ProductionBlock as IProductionBlock, Product } from 'data/types';
+import { ProductionBlock } from 'components/widgets/ProductionBlock';
+import { FullSizeNotification, NotificationType } from 'components/widgets/FullSizeNotification';
 
 const productionBlockColumnStyles = css`
 	flex: 1;

@@ -1,4 +1,4 @@
-import { Maybe } from "../util/Maybe";
+import { Maybe } from "util/Maybe";
 
 export type Rate = number
 

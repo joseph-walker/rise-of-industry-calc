@@ -1,6 +1,6 @@
-import { Monad } from './Algebra';
-
 import { reduceRight as foldr } from 'ramda';
+
+import { Monad } from 'util/Algebra';
 
 export class List<T> implements Monad<T> {
 	private constructor (readonly values: T[]) {

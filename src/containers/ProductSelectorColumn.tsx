@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-import { ReduxState } from '../state/store';
-import { Product } from '../data/types';
-import { getProducts } from '../data/getProducts';
-import { ProductsAction } from '../state/modules/products/reducer';
-import { setSearchValue } from '../state/modules/products/actions/search';
-import { toggleSelectedProduct } from '../state/modules/products/actions/toggleSelected';
-import { ProductSelectorColumn as ProductSelectorColumnComponent } from '../components/columns/ProductSelectorColumn';
-import { Maybe } from '../util/Maybe';
+import { Maybe } from 'util/Maybe';
+import { Product } from 'data/types';
+import { getProducts } from 'data/getProducts';
+import { ReduxState } from 'state/store';
+import { ProductsAction } from 'state/modules/products/reducer';
+import { setSearchValue } from 'state/modules/products/actions/search';
+import { toggleSelectedProduct } from 'state/modules/products/actions/toggleSelected';
+import { ProductSelectorColumn as ProductSelectorColumnComponent } from 'components/columns/ProductSelectorColumn';
 
 function alphabetize(p1: Product, p2: Product): number {
 	const p1Name = p1.name.toLowerCase()[0];

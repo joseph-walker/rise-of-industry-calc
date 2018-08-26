@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { css } from 'emotion';
 
-import { ProductSelectorColumn } from '../../containers/ProductSelectorColumn';
-import { ProductionBlockColumn } from '../../containers/ProductionBlockColumn';
-import { RecipeRequirementsColumn } from '../columns/RecipeRequirementsColumn';
+import { ProductSelectorColumn } from 'containers/ProductSelectorColumn';
+import { ProductionBlockColumn } from 'containers/ProductionBlockColumn';
+import { RecipeRequirementsColumn } from 'components/columns/RecipeRequirementsColumn';
 
 const mainContainerStyles = css`
 	display: flex;

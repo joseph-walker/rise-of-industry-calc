@@ -1,4 +1,4 @@
-import { List } from './List';
+import { List } from 'util/List';
 
 export interface Functor<T> {
 	map<U>(fn: (x: T) => U): Functor<U>

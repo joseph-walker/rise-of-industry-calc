@@ -1,5 +1,4 @@
-import { compose as composeFn, lensProp, Lens } from 'ramda';
-import { compose } from 'redux';
+import { compose, lensProp, Lens } from 'ramda';
 
 export enum UpdateProductionBlockTypes {
 	UpdateProductionBlock = '@@products/UPDATE_PRODUCTION_BLOCK_VALUE'
@@ -17,7 +16,7 @@ export type UpdateProductionBlockAction
 export function updateProductionBlockValue(blockIndex: Lens, blockValue: Lens, value: string): UpdateProductionBlock {
 	return {
 		type: UpdateProductionBlockTypes.UpdateProductionBlock,
-		blockPath: composeFn(blockIndex, lensProp('requiredRate'), blockValue) as Lens,
+		blockPath: compose(blockIndex, lensProp('requiredRate'), blockValue) as Lens,
 		value
 	};
 };

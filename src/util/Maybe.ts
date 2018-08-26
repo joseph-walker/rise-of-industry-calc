@@ -1,4 +1,4 @@
-import { Monad } from './Algebra';
+import { Monad } from 'util/Algebra';
 
 enum MaybeType {
 	Just = 'MAYBE_JUST',

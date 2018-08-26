@@ -1,3 +1,9 @@
+const path = require('path');
+
+function srcPath(subdir) {
+    return path.join(__dirname, 'src', subdir);
+}
+
 module.exports = {
 	mode: 'development',
 	entry: './src/main.tsx',
@@ -13,7 +19,14 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js']
+		extensions: ['.ts', '.tsx', '.js'],
+		alias: {
+			components: srcPath('components'),
+			containers: srcPath('containers'),
+			data: srcPath('data'),
+			state: srcPath('state'),
+			util: srcPath('util')
+		}
 	},
 	module: {
 		rules: [

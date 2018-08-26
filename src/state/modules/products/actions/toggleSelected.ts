@@ -1,4 +1,4 @@
-import { Product } from "../../../../data/types";
+import { Product } from "data/types";
 
 export enum ToggleActionTypes {
 	ToggleSelectedProduct = '@@products/TOGGLE_SELECTED_PRODUCT'

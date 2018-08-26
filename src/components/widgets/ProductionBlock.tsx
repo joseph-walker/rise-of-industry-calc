@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from 'emotion';
 import { Lens, lensProp } from 'ramda';
 
-import { ProductionBlock as IProductionBlock, Product } from '../../data/types';
+import { ProductionBlock as IProductionBlock, Product } from 'data/types';
 
 const headerStyles = css`
 	display: flex;

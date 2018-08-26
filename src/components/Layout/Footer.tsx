@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from 'emotion';
 
-import { ButtonStyle, Button } from '../widgets/Button';
+import { ButtonStyle, Button } from 'components/widgets/Button';
 
 const footerStyles = css`
 	display: flex;

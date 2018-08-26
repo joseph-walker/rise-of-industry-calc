@@ -1,7 +1,7 @@
 import { indexOf } from 'ramda';
 
-import { Chunks, Rate } from './types';
-import { Maybe } from './../util/Maybe';
+import { Chunks, Rate } from 'data/types';
+import { Maybe } from 'util/Maybe';
 
 export function getRequirements(chunks: Chunks, productName1: string, productName2: string): Maybe<Rate> {
 	if (chunks[productName1] === undefined)

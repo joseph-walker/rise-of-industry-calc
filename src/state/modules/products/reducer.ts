@@ -1,15 +1,15 @@
 import { LoopReducer, loop, Cmd } from 'redux-loop';
 import { Lens, compose, lensProp, set, remove, append } from 'ramda';
 
-import { productListContainsProduct } from '../../../data/productList';
-import { FetchRatesActionTypes, FetchRatesAction, fetchRatesSuccess, fetchRatesFail } from './actions/fetchRates';
+import { Maybe } from 'util/Maybe';
+import { Response } from 'util/Response';
+import { Chunks, ProductionBlock } from 'data/types';
+import { productListContainsProduct } from 'data/productList';
+import { runFetchRates } from './commands/runFetchRates';
 import { SearchActionTypes, SearchAction } from './actions/search';
 import { ToggleActionTypes, ToggleAction } from './actions/toggleSelected';
 import { UpdateProductionBlockTypes, UpdateProductionBlockAction } from './actions/updateProductionBlock';
-import { runFetchRates } from './commands/runFetchRates';
-import { Response } from './../../../util/Response';
-import { Maybe } from './../../../util/Maybe';
-import { Chunks, ProductionBlock } from './../../../data/types';
+import { FetchRatesActionTypes, FetchRatesAction, fetchRatesSuccess, fetchRatesFail } from './actions/fetchRates';
 
 export type ProductsAction
 	= FetchRatesAction

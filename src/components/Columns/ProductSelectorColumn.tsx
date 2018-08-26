@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { css } from 'emotion';
 
-import { Product } from '../../data/types';
-import { productListContainsProduct } from '../../data/productList';
-import { Response } from '../../util/Response';
-import { Maybe } from '../../util/Maybe';
-import { FullSizeLoader } from '../widgets/FullSizeLoader';
-import { FullSizeNotification, NotificationType } from '../widgets/FullSizeNotification';
+import { Product } from 'data/types';
+import { productListContainsProduct } from 'data/productList';
+import { Response } from 'util/Response';
+import { Maybe } from 'util/Maybe';
+import { FullSizeLoader } from 'components/widgets/FullSizeLoader';
+import { FullSizeNotification, NotificationType } from 'components/widgets/FullSizeNotification';
 
 const productSelectorColumnStyles = css`
 	flex: 1;

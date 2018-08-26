@@ -1,5 +1,5 @@
-import { Rate, Chunks, Recipe } from "./types";
-import { Maybe } from './../util/Maybe';
+import { Rate, Chunks, Recipe } from "data/types";
+import { Maybe } from 'util/Maybe';
 
 export function getRecipe(chunks: Chunks, requiredRate: Rate, productName: string): Maybe<Recipe> {
 	const extractChunkByName = (c: { name: string }) => extractChunk(c.name);

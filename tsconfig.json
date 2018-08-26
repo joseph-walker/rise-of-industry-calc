@@ -8,6 +8,14 @@
 		"noImplicitAny": true,
 		"sourceMap": true,
 		"outDir": "./dist",
-		"jsx": "react"
+		"jsx": "react",
+		"baseUrl": "src",
+		"paths": {
+			"components/*": ["components/*"],
+			"containers/*": ["containers/*"],
+			"data/*": ["data/*"],
+			"state/*": ["state/*"],
+			"util/*": ["util/*"]
+		}
 	}
 }

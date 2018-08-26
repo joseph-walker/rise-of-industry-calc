@@ -1,4 +1,4 @@
-import { Chunks } from './../../../../data/types';
+import { Chunks } from 'data/types';
 
 export enum FetchRatesActionTypes {
 	Init = '@@products/FETCH_RATES_INIT',
