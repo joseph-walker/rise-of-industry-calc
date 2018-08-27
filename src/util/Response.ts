@@ -1,4 +1,4 @@
-import { Monad } from 'util/Algebra';
+import { Monad, isFunction } from 'util/Algebra';
 
 enum ResponseType {
 	Loading = 'RESPONSE_LOADING',
@@ -17,19 +17,19 @@ export class Response<T, E> implements Monad<T> {
 		//
 	}
 
-	static Loading(): Response<any, any> {
+	public static Loading(): Response<any, any> {
 		return new Response(ResponseType.Loading, null, null);
 	}
 
-	static Ready<T>(value: T): Response<T, any> {
+	public static Ready<T>(value: T): Response<T, any> {
 		return new Response(ResponseType.Ready, value, null);
 	}
 
-	static Error<E>(err: E): Response<any, E> {
+	public static Error<E>(err: E): Response<any, E> {
 		return new Response(ResponseType.Error, null, err);
 	}
 
-	static pure<T, E>(x: T): Response<T, E> {
+	public static pure<T, E>(x: T): Response<T, E> {
 		return Response.Ready(x);
 	}
 
@@ -54,18 +54,22 @@ export class Response<T, E> implements Monad<T> {
 		return Response.Loading();
 	}
 
-	public ap<U>(responseFn: Response<(x: T) => U, E>): Response<U, E> {
-		if (this.isReady()) {
-			if (responseFn.isReady()) {
-				return Response.Ready(responseFn.value(this.value));
+	public ap<U, V>(x: Response<U, E>): Response<V, E> {
+		if (this.isReady() && x.isReady()) {
+			if (isFunction<U, V>(this.value)) {
+				const fn = this.value;
+
+				return Response.Ready(fn(x.value));
 			}
-			else if (responseFn.isError()) {
-				return Response.Error(responseFn.err);
-			}
+			else
+				throw new Error(`Type Constraint Failure: Expected ${this.value} to be function, got ${typeof this.value}`);
 		}
-		else if (this.isError()) {
+		else if (this.isError())
 			return Response.Error(this.err);
-		}
+		else if (this.isLoading())
+			return Response.Loading();
+		else if (x.isError())
+			return Response.Error(x.err);
 
 		return Response.Loading();
 	}

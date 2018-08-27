@@ -1,4 +1,4 @@
-import { Monad } from 'util/Algebra';
+import { isFunction, Monad } from 'util/Algebra';
 
 enum MaybeType {
 	Just = 'MAYBE_JUST',
@@ -49,9 +49,17 @@ export class Maybe<T> implements Monad<T> {
 		return Maybe.Nothing();
 	}
 
-	public ap<U>(maybeFn: Maybe<(x: T) => U>): Maybe<U> {
-		if (this.isJust() && maybeFn.isJust())
-			return Maybe.Just(maybeFn.value(this.value));
+	public ap<U, V>(x: Maybe<U>): Maybe<V> {
+		if (this.isJust() && x.isJust()) {
+			if (isFunction<U, V>(this.value)) {
+				const fn = this.value;
+
+				return Maybe.Just(fn(x.value));
+			}
+			else {
+				throw new Error(`Type Constraint Failure: Expected ${this.value} to be function, got ${typeof this.value}`);
+			}
+		}
 
 		return Maybe.Nothing();
 	}

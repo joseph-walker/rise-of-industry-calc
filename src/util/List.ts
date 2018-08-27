@@ -1,18 +1,22 @@
-import { reduceRight as foldr } from 'ramda';
+import { unnest, reduceRight as foldr } from 'ramda';
 
-import { Monad } from 'util/Algebra';
+import { Monad, isFunction } from 'util/Algebra';
 
 export class List<T> implements Monad<T> {
 	private constructor (readonly values: T[]) {
 		//
 	}
 
-	static fromArray<T>(values: T[]): List<T> {
+	public static of<T>(value: T): List<T> {
+		return new List([value]);
+	}
+
+	public static fromArray<T>(values: T[]): List<T> {
 		return new List(values);
 	}
 
-	static pure<T>(): List<T> {
-		return List.fromArray([]);
+	public static pure<T>(x: T): List<T> {
+		return List.fromArray([x]);
 	}
 
 	public cons(x: T): List<T> {
@@ -32,12 +36,18 @@ export class List<T> implements Monad<T> {
 		return new List(this.values.map(fn));
 	}
 
-	public ap<U>(fns: List<(x: T) => U>): List<U> {
+	public ap<U, V>(x: List<U>): List<V> {
 		let result = [];
 
-		for (let fn of fns.toArray()) {
-			for (let value of this.values) {
-				result.push(fn(value));
+		const fns = this.values;
+
+		for (let fn of fns) {
+			for (let value of x.values) {
+
+				if (isFunction<U, V>(fn))
+					result.push(fn(value));
+				else
+					throw new Error(`Type Constraint Failure: Expected ${value} to be function, got ${typeof value}`);
 			}
 		}
 
@@ -45,6 +55,8 @@ export class List<T> implements Monad<T> {
 	}
 
 	public chain<U>(fn: (x: T) => List<U>): List<U> {
-		return List.fromArray([].concat([], this.values.map(fn)));
+		const values = unnest(this.values.map(y => fn(y).values));
+
+		return List.fromArray(values);
 	}
 }

@@ -1,4 +1,4 @@
-import { Monad } from 'util/Algebra';
+import { Monad, isFunction } from 'util/Algebra';
 
 enum EitherType {
 	Left = 'EITHER_LEFT',
@@ -42,11 +42,20 @@ export class Either<L, R> implements Monad<R> {
 		return Either.Left(this.left);
 	}
 
-	public ap<U>(eitherFn: Either<L, (x: R) => U>): Either<L, U> {
-		if (this.isRight() && eitherFn.isRight())
-			return Either.Right(eitherFn.right(this.right));
+	public ap<U, V>(x: Either<L, U>): Either<L, V> {
+		if (this.isRight() && x.isRight()) {
+			if (isFunction<U, V>(this.right)) {
+				const fn = this.right;
 
-		return Either.Left(this.left);
+				return Either.Right(fn(x.right));
+			}
+			else
+				throw new Error(`Type Constraint Failure: Expected Right value ${this.right} to be function, got ${typeof this.right}`);
+		}
+		if (this.isLeft())
+			return Either.Left(this.left);
+
+		return Either.Left(x.left);
 	}
 
 	public chain<U>(fn: (x: R) => Either<L, U>): Either<L, U> {
