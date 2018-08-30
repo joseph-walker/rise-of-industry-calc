@@ -1,7 +1,7 @@
 import { Rate, Chunks, Recipe } from "data/types";
 import { Maybe } from 'util/Maybe';
 
-export function getRecipe(chunks: Chunks, requiredRate: Rate, productName: string): Maybe<Recipe> {
+export function getRecipe(chunks: Chunks, productName: string): Maybe<Recipe> {
 	const extractChunkByName = (c: { name: string }) => extractChunk(c.name);
 
 	function extractChunk(n: string): Recipe {
@@ -17,18 +17,8 @@ export function getRecipe(chunks: Chunks, requiredRate: Rate, productName: strin
 		};
 	}
 
-	if (chunks[productName] === undefined)
-		return Maybe.Nothing();
-
 	try {
-		const chunk = chunks[productName];
-		const recipe = {
-			name: chunk.name,
-			requiredRate,
-			components: chunk.components.map(extractChunkByName)
-		};
-
-		return Maybe.Just(recipe);
+		return Maybe.Just(extractChunk(productName));
 	}
 	catch (err) {
 		return Maybe.Nothing();

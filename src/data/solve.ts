@@ -23,7 +23,7 @@ export function solve(chunks: Chunks, requiredRate: Rate, productList: Product[]
 
 			return nextProductRequiredRate
 				.chain(function(nextProductRate) {
-					return solve(chunks, nextProductRate, [].concat(p2, tail(productList)))
+					return solve(chunks, nextProductRate, tail(productList))
 				});
 		}
 	}

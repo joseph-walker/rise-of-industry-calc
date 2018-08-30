@@ -109,7 +109,8 @@ h1 {
 }
 
 .products-list,
-.blocks-list {
+.blocks-list,
+.requirements-list {
 	display: flex;
 	flex-direction: column;
 }
@@ -170,4 +171,18 @@ h1 {
 	margin: 0 6px;
 	background-color: #FFF;
    	border: 1px solid #eaeaea;
+}
+
+.requirements-list li {
+	display: flex;
+	margin: 3px 3px 0 3px;
+	background-color: #f7f7f7;
+	border: 1px solid #F5F5F5;
+	padding: 12px;
+}
+
+.requirements-list li i {
+	display: block;
+	margin-left: auto;
+	background-color: blue;
 }

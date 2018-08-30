@@ -23,13 +23,19 @@ export interface Recipe {
 	components: Recipe[]
 }
 
+export interface RecipeRequirements {
+	name: string,
+	requiredFactories: number,
+	components: RecipeRequirements[]
+}
+
 export interface Chunks {
 	[name: string]: {
 		name: string,
 		unitRate: Rate,
-		components: [{
+		components: {
 			name: string,
 			unitRate: Rate
-		}]
+		}[]
 	}
 }
