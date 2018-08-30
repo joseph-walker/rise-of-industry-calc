@@ -15,16 +15,16 @@ describe('Requirements Solver', function() {
 	const emptyChain: Product[] = [];
 
 	it('should solve a production block for required factory instances', function() {
-		expect(solve(testChunks, 0.2, chain1)).to.be.deep.equal(Maybe.Just([testProducts.beef, 10]));
-		expect(solve(testChunks, 0.2, chain2)).to.be.deep.equal(Maybe.Just([testProducts.wheat, 4]));
-		expect(solve(testChunks, 0.2, chain3)).to.be.deep.equal(Maybe.Just([testProducts.water, 2]));
+		expect(solve(testChunks, 0.2, chain1)).to.be.deep.equal([testProducts.beef, 10]);
+		expect(solve(testChunks, 0.2, chain2)).to.be.deep.equal([testProducts.wheat, 4]);
+		expect(solve(testChunks, 0.2, chain3)).to.be.deep.equal([testProducts.water, 2]);
 	});
 
-	it('should return Nothing for an invalid chain', function() {
-		expect(solve(testChunks, 0.2, invalidChain)).to.be.deep.equal(Maybe.Nothing());
+	it('should throw for an invalid chain', function() {
+		expect(() => solve(testChunks, 0.2, invalidChain)).to.throw();
 	});
 
-	it('should return Nothing for an empty chain', function() {
-		expect(solve(testChunks, 0.2, emptyChain)).to.be.deep.equal(Maybe.Nothing());
+	it('should throw for an empty chain', function() {
+		expect(() => solve(testChunks, 0.2, emptyChain)).to.throw();
 	});
 });

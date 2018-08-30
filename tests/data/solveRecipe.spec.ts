@@ -12,7 +12,7 @@ describe.only('Recipe Solver', function() {
 	it('should solve a recipe and flatten the output', function() {
 		const f = getRecipe(testChunks, testProducts.beef.name);
 
-		const g = f.map(r => solveRecipe(testChunks, 0.4, [], r));
+		const g = solveRecipe(testChunks, 0.4, [], f);
 
 		expect(g).to.be.deep.equal({});
 	});

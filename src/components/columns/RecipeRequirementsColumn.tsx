@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { css } from 'emotion';
 
-import { Product } from 'data/types';
-
 const recipeRequirementsColumnStyles = css`
 	flex: 2;
 `;
@@ -36,7 +34,7 @@ const requirementStyles = css`
 `;
 
 interface OwnProps {
-	productRequirements: [Product, number][]
+	productRequirements: [string, number][]
 }
 
 export function RecipeRequirementsColumn(props: OwnProps) {
