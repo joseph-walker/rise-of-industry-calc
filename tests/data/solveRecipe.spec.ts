@@ -1,19 +1,36 @@
 import 'mocha';
 import { expect } from 'chai';
 
-import { Maybe } from 'util/Maybe';
 import { getRecipe } from 'data/getRecipe';
 import { solveRecipe } from 'data/solveRecipe';
-import { Product } from 'data/types';
+import { RecipeRequirements } from 'data/types';
 import { testChunks } from './stub/chunks';
 import * as testProducts from './stub/products';
 
-describe.only('Recipe Solver', function() {
-	it('should solve a recipe and flatten the output', function() {
-		const f = getRecipe(testChunks, testProducts.beef.name);
+describe('Recipe Solver', function() {
+	const solvedRecipe: RecipeRequirements = {
+		components: [
+			{
+				components: [],
+				name: 'Water',
+				requiredFactories: 8
+			}, {
+				components: [{
+					components: [],
+					name: 'Water',
+					requiredFactories: 4
+				}],
+				name: 'Wheat',
+				requiredFactories: 8
+			}
+		],
+		name: 'Beef',
+		requiredFactories: 20
+	};
 
-		const g = solveRecipe(testChunks, 0.4, [], f);
+	it('should solve a recipe for its requirements', function() {
+		const recipe = getRecipe(testChunks, testProducts.beef.name);
 
-		expect(g).to.be.deep.equal({});
+		expect(solveRecipe(testChunks, 0.4, recipe)).to.be.deep.equal(solvedRecipe);
 	});
 });

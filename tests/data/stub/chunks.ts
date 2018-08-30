@@ -1,4 +1,4 @@
-import { Chunks, Rate } from 'data/types';
+import { Chunks } from 'data/types';
 
 export const testChunks: Chunks = {
 	'Water': {

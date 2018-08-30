@@ -9,7 +9,7 @@ import * as testProducts from './stub/products';
 describe('Recipe Generator', function() {
 	const emptyComponentList: Recipe[] = [];
 
-	const beefRecipe = {
+	const beefRecipe: Recipe = {
 		name: 'Beef',
 		requiredRate: 0.02,
 		components: [{

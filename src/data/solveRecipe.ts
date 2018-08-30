@@ -11,12 +11,12 @@ function isoRecipeToProduct(r: Recipe): Product {
 	};
 }
 
-export function solveRecipe<T>(chunks: Chunks, requiredRootRate: number, path: Product[], recipe: Recipe): RecipeRequirements {
+export function solveRecipe<T>(chunks: Chunks, requiredRootRate: number, recipe: Recipe, path: Product[] = []): RecipeRequirements {
 	const newPath = cons(isoRecipeToProduct(recipe), path);
 
 	return {
 		name: recipe.name,
 		requiredFactories: solve(chunks, requiredRootRate, newPath)[1],
-		components: recipe.components.map(c => solveRecipe(chunks, requiredRootRate, newPath, c))
+		components: recipe.components.map(c => solveRecipe(chunks, requiredRootRate, c, newPath))
 	};
 }
