@@ -39,3 +39,7 @@ export function traverse<T, U>(pure: PureConstructor<List<U>>, fn: (x: T) => App
 
 	return xs.foldr(consF, pure(List.fromArray<U>([])));
 }
+
+export function sequenceA<T>(pure: PureConstructor<List<T>>, xs: List<Applicative<T>>): Applicative<List<T>> {
+	return traverse(pure, (x: any) => x, xs);
+}

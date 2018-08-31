@@ -3,7 +3,7 @@ import { flatten } from 'flat';
 
 import { RecipeRequirements } from "data/types";
 
-export function flattenRecipeRequirements(recipe: RecipeRequirements): { [k: string]: number } {
+export function flattenRecipeRequirements(recipe: RecipeRequirements): { [k: string]: number }[] {
 	const fromPair = ([k, v]: [string, number]): {} => ({[k]: v});
 
 	const fn = compose(
@@ -15,6 +15,5 @@ export function flattenRecipeRequirements(recipe: RecipeRequirements): { [k: str
 	);
 
 	return fn(recipe)
-		.map(fromPair)
-		.reduce(mergeWith(add), {});
+		.map(fromPair);
 }

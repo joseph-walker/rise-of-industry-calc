@@ -3,7 +3,7 @@ import { css } from 'emotion';
 
 import { ProductSelectorColumn } from 'containers/ProductSelectorColumn';
 import { ProductionBlockColumn } from 'containers/ProductionBlockColumn';
-import { RecipeRequirementsColumn } from 'components/columns/RecipeRequirementsColumn';
+import { RecipeRequirementsColumn } from 'containers/RecipeRequirementsColumn';
 
 const mainContainerStyles = css`
 	display: flex;
