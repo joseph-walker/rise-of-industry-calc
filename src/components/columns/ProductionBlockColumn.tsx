@@ -43,7 +43,7 @@ interface OwnProps {
 export function ProductionBlockColumn(props: OwnProps) {
 	function renderBlock(b: IProductionBlock, i: number) {
 		return (
-			<li>
+			<li key={i}>
 				<ProductionBlock
 					onRemoveProduct={props.onRemoveProduct}
 					onUpdateBlockValue={props.onUpdateBlockValue(lensIndex(i))}
