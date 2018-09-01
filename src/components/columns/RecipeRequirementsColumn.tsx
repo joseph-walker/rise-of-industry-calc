@@ -13,8 +13,9 @@ const recipeRequirementsColumnStyles = css`
 `;
 
 const requirementListStyles = css`
-	display: flex;
-	flex-direction: column;
+	display: block;
+	overflow-y: scroll;
+	height: 100%;
 `;
 
 const requirementStyles = css`
@@ -37,6 +38,10 @@ const requirementStyles = css`
 		text-align: center;
 		display: block;
 		background-color: #454ea0;
+	}
+
+	&:last-child {
+		margin-bottom: 3px;
 	}
 `;
 
