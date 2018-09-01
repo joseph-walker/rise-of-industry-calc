@@ -49,7 +49,7 @@ const Icon = styled('i')`
 
 interface OwnProps {
 	type: NotificationType,
-	message: string
+	message: string | JSX.Element
 }
 
 export function FullSizeNotification(props: OwnProps) {

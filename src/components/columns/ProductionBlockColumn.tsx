@@ -35,6 +35,18 @@ const productBlockStyles = css`
 	}
 `;
 
+const selectorDirection = css`
+	&:before {
+		content: 'on the left';
+	}
+
+	@media(max-width: ${sm}) {
+		&:before {
+			content: 'above';
+		}
+	}
+`;
+
 interface OwnProps {
 	productBlocks: IProductionBlock[],
 	onRemoveProduct: (p: Product) => void,
@@ -53,6 +65,8 @@ export function ProductionBlockColumn(props: OwnProps) {
 		);
 	}
 
+	const test = <>Select some products <span className={selectorDirection}></span> to create a production block...</>;
+
 	const columnContents = props.productBlocks.length
 		? (
 			<ul className={productBlockStyles}>
@@ -61,7 +75,8 @@ export function ProductionBlockColumn(props: OwnProps) {
 		)
 		: <FullSizeNotification
 			type={NotificationType.notification}
-			message="Select some products on the left to create a production block..." />;
+			message={test} />
+			// message="" />;
 
 	return (
 		<div className={`column ${productionBlockColumnStyles}`}>
