@@ -28,22 +28,13 @@ interface OwnProps {
 }
 
 export function Footer(props: OwnProps) {
-	const noOp = () => {};
-
-	const clearButton = props.numSelectedProducts > 0
-		? <Button
-			buttonStyle={ButtonStyle.danger}
-			content={`Clear ${props.numSelectedProducts} Selected Products`}
-			onClick={props.onRemoveAllProducts} />
-		: <Button
-			buttonStyle={ButtonStyle.danger}
-			disabled
-			content="Clear Selected Products"
-			onClick={noOp} />;
-
 	return (
 		<footer className={footerStyles}>
-			{clearButton}
+			<Button
+				buttonStyle={ButtonStyle.danger}
+				disabled={props.numSelectedProducts == 0}
+				content={`Clear Selected Products`}
+				onClick={props.onRemoveAllProducts} />
 		</footer>
 	);
 }

@@ -7,7 +7,8 @@ export enum ButtonStyle {
 }
 
 interface StyledButtonProps {
-	buttonStyle: ButtonStyle
+	buttonStyle: ButtonStyle,
+	disabled?: boolean
 }
 
 function backgroundColor({ buttonStyle }: StyledButtonProps): string {
@@ -35,20 +36,23 @@ const StyledButton = styled('button')`
 	border: 1px solid transparent;
 	border-color: ${borderColor};
 	border-radius: 4px;
-	cursor: pointer;
+	cursor: ${props => props.disabled ? 'default' : 'pointer'};
+	opacity: ${props => props.disabled ? '0.5' : '1'};
 `;
 
 interface OwnProps {
 	content: string,
-	onClick: () => void,
-	disabled?: boolean
+	onClick: () => void
 }
 
 export function Button(props: OwnProps & StyledButtonProps) {
+	const noOp = () => {};
+
 	return (
 		<StyledButton
 			buttonStyle={props.buttonStyle}
-			onClick={props.onClick}>
+			disabled={props.disabled}
+			onClick={props.disabled ? noOp : props.onClick}>
 			{props.content}
 		</StyledButton>
 	);
