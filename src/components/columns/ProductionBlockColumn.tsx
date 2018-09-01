@@ -17,7 +17,8 @@ const productionBlockColumnStyles = css`
 
 	@media(max-width: ${sm}) {
 		flex-basis: 100%;
-		margin: 24px 0;
+		margin-left: 0;
+		margin-top: 24px;
 	}
 `;
 

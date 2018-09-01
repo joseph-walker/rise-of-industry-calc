@@ -26,7 +26,8 @@ const mainContainerStyles = css`
 
 	@media(max-width: ${md}) {
 		& .column {
-			height: 420px;
+			max-height: 420px;
+			min-height: 240px;
 		}
 	}
 `;
