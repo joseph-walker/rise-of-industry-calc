@@ -1,5 +1,6 @@
 export async function runFetchRates() {
-	const res = await fetch('/data/roiRates.json');
+	// @ts-ignore
+	const res = await fetch(window.__CONFIG_DATA_RESOURCE_PATH);
 
 	return await res.json();
 };
