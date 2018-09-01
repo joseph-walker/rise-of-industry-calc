@@ -4,7 +4,7 @@ import { css } from 'emotion';
 
 import { Response } from 'util/Response';
 import { Either } from 'util/Either';
-import { RequirementTuple } from 'data/types';
+import { RequirementTuple, NotificationMessage } from 'data/types';
 import { FullSizeLoader } from 'components/widgets/FullSizeLoader';
 import { FullSizeNotification, NotificationType } from 'components/widgets/FullSizeNotification';
 import { md } from 'styles/breakpoints';
@@ -54,23 +54,24 @@ const requirementStyles = css`
 `;
 
 interface OwnProps {
-	recipeRequirements: Response<Either<string, RequirementTuple>, string>
+	recipeRequirements: Response<Either<NotificationMessage, RequirementTuple>, string>
 }
 
 export function RecipeRequirementsColumn(props: OwnProps) {
 	const noBlocksMessage = `...and the number of factories you need will show up here`;
+	const noBlocksNotification = <FullSizeNotification message={noBlocksMessage} type={NotificationType.notification} />;
 
 	const requirementsContents = props.recipeRequirements.with({
 		// Don't show the loader or errors in this column,
 		// there's already a notification in the left column
-		loading: () => null,
+		loading: () => noBlocksNotification,
 		error: (err) => null,
 		ready: function(eitherRequirements) {
 			return eitherRequirements.with({
-				left: (err) => <FullSizeNotification message={err} type={NotificationType.notification} />,
+				left: (err) => <FullSizeNotification message={err.message} type={err.type} />,
 				right: function(requirements) {
 					if (!Object.keys(requirements).length)
-						return <FullSizeNotification message={noBlocksMessage} type={NotificationType.notification} />;
+						return noBlocksNotification;
 
 					const listElements = toPairs(requirements).map(function([p, n], i) {
 						return (

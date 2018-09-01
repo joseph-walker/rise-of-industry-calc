@@ -1,4 +1,5 @@
 import { Maybe } from "util/Maybe";
+import { NotificationType } from "components/widgets/FullSizeNotification";
 
 export type Rate = number
 
@@ -27,6 +28,11 @@ export interface RecipeRequirements {
 	name: string,
 	requiredFactories: number,
 	components: RecipeRequirements[]
+}
+
+export interface NotificationMessage {
+	message: string,
+	type: NotificationType
 }
 
 export type RequirementTuple = { [k: string]: number };

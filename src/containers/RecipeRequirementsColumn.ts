@@ -6,12 +6,13 @@ import { RecipeRequirementsColumn as RecipeRequirementsColumnComponent } from 'c
 import { ReduxState } from 'state/store';
 import { ProductsAction } from 'state/modules/products/reducer';
 import { getRecipe } from 'data/getRecipe';
-import { OutputRequirements, Rate, RequirementTuple } from 'data/types';
+import { OutputRequirements, Rate, RequirementTuple, NotificationMessage } from 'data/types';
 import { flattenRecipeRequirements } from 'data/flattenRecipeRequirements';
 import { Either } from 'util/Either';
 import { sequenceA, liftA2 } from 'util/Algebra';
 import { solveRecipe } from 'data/solveRecipe';
 import { List } from 'util/List';
+import { NotificationType } from 'components/widgets/FullSizeNotification';
 
 // Return either a number or an error string
 function parseNumber(str: string): Either<string, number> {
@@ -41,23 +42,32 @@ function mapStateToProps(state: ReduxState) {
 	} = state.products;
 
 	const solvedRecipeRequirements = chunkResponse.map(function(chunks) {
-		const solvedBlocks = blocks.map(function(block) {
-			const requiredRate = getRequiredRate(block.requiredRate)
-				.mapError(e => `${block.product.name} has invalid inputs: ${e}`);
+		try {
+			const solvedBlocks = blocks.map(function(block) {
+				const requiredRate = getRequiredRate(block.requiredRate)
+					.mapError(e => `${block.product.name} has invalid inputs: ${e}`)
+					.mapError(m => ({ message: m, type: NotificationType.notification } as NotificationMessage));
 
-			const recipe = getRecipe(chunks, block.product.name);
+				const recipe = getRecipe(chunks, block.product.name); // Can throw
 
-			return requiredRate.map(function(rate) {
-				return flattenRecipeRequirements(solveRecipe(chunks, rate, recipe));
+				return requiredRate.map(function(rate) {
+					return flattenRecipeRequirements(solveRecipe(chunks, rate, recipe)); // Can throw
+				});
 			});
-		});
 
-		const resolvedRequirements = sequenceA(
-			Either.pure,
-			List.fromArray(solvedBlocks)
-		).map(l => l.toArray()) as Either<string, RequirementTuple[][]>;
+			const resolvedRequirements = sequenceA(
+				Either.pure,
+				List.fromArray(solvedBlocks)
+			).map(l => l.toArray()) as Either<NotificationMessage, RequirementTuple[][]>;
 
-		return resolvedRequirements.map(flattenRequirements) as Either<string, RequirementTuple>;
+			return resolvedRequirements.map(flattenRequirements) as Either<NotificationMessage, RequirementTuple>;
+		}
+		catch (err) {
+			return Either.Left({
+				message: err.message,
+				type: NotificationType.error
+			}) as Either<NotificationMessage, RequirementTuple>;
+		}
 	});
 
 	return {

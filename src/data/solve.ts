@@ -2,7 +2,6 @@ import { tail } from 'ramda';
 
 import { Chunks, Product, Rate } from 'data/types';
 import { getRequirements } from 'data/getRequirements';
-import { Maybe } from 'util/Maybe';
 
 export function solve(chunks: Chunks, requiredRate: Rate, productList: Product[]): [Product, number] {
 	switch (productList.length) {
