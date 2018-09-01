@@ -4,8 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start-dev": "webpack-dev-server",
-		"build": "webpack --config ./webpack.config.js",
+		"start-dev": "NODE_ENV=development webpack-dev-server",
+		"build": "NODE_ENV=development webpack --config ./webpack.config.js",
+		"build-prod": "NODE_ENV=development webpack --config ./webpack.config.js",
 		"test": "mocha -r ts-node/register -r tsconfig-paths/register tests/**/*.spec.ts"
 	},
 	"author": "Joseph Walker <joseph.walker@outlook.com>",

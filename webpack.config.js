@@ -4,16 +4,10 @@ function srcPath(subdir) {
     return path.join(__dirname, 'src', subdir);
 }
 
-module.exports = {
-	mode: 'development',
+const env = process.env.NODE_ENV;
+
+let config = {
 	entry: './src/main.tsx',
-    devtool: 'inline-source-map',
-	devServer: {
-		contentBase: './',
-		publicPath: '/dist/',
-		index: 'index.html',
-		historyApiFallback: true
-	},
 	output: {
 		path: path.join(__dirname, 'dist/'),
 		filename: 'bundle.js'
@@ -34,3 +28,24 @@ module.exports = {
 		]
 	}
 }
+
+if (env == 'development') {
+	config = Object.assign({}, config, {
+		mode: 'development',
+		devtool: 'inline-source-map',
+		devServer: {
+			contentBase: './',
+			publicPath: '/dist/',
+			index: 'index.html',
+			historyApiFallback: true
+		},
+	});
+}
+
+if (env == 'production') {
+	config = Object.assign({}, config, {
+		mode: 'production',
+	});
+}
+
+module.exports = config;
