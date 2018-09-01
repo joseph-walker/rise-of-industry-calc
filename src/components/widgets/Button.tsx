@@ -40,7 +40,8 @@ const StyledButton = styled('button')`
 
 interface OwnProps {
 	content: string,
-	onClick: () => void
+	onClick: () => void,
+	disabled?: boolean
 }
 
 export function Button(props: OwnProps & StyledButtonProps) {

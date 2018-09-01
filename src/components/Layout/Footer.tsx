@@ -23,16 +23,27 @@ const footerStyles = css`
 `;
 
 interface OwnProps {
-	//
+	numSelectedProducts: number,
+	onRemoveAllProducts: () => void
 }
 
 export function Footer(props: OwnProps) {
 	const noOp = () => {};
 
+	const clearButton = props.numSelectedProducts > 0
+		? <Button
+			buttonStyle={ButtonStyle.danger}
+			content={`Clear ${props.numSelectedProducts} Selected Products`}
+			onClick={props.onRemoveAllProducts} />
+		: <Button
+			buttonStyle={ButtonStyle.danger}
+			disabled
+			content="Clear Selected Products"
+			onClick={noOp} />;
+
 	return (
 		<footer className={footerStyles}>
-			<Button buttonStyle={ButtonStyle.danger} content="Clear All Selected Products" onClick={noOp} />
-			<Button buttonStyle={ButtonStyle.default} content="Copy Link to Factory" onClick={noOp} />
+			{clearButton}
 		</footer>
 	);
 }

@@ -10,12 +10,14 @@ import { SearchActionTypes, SearchAction } from './actions/search';
 import { ToggleActionTypes, ToggleAction } from './actions/toggleSelected';
 import { UpdateProductionBlockTypes, UpdateProductionBlockAction } from './actions/updateProductionBlock';
 import { FetchRatesActionTypes, FetchRatesAction, fetchRatesSuccess, fetchRatesFail } from './actions/fetchRates';
+import { RemoveAllSelectedTypes, RemoveAllSelectedAction } from './actions/removeAllSelected';
 
 export type ProductsAction
 	= FetchRatesAction
 	| SearchAction
 	| ToggleAction
 	| UpdateProductionBlockAction
+	| RemoveAllSelectedAction
 
 export interface ProductsState {
 	productChunks: Response<Chunks, string>,
@@ -83,6 +85,12 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 			const productionBlockLens = compose(lensProp('productBlocks'), action.blockPath) as Lens;
 
 			return set(productionBlockLens, action.value.replace(/[^\d\.]/g, ''), state);
+		}
+		case RemoveAllSelectedTypes.RemoveAllSelectedProducts: {
+			return {
+				...state,
+				productBlocks: []
+			};
 		}
 		default: {
 			return state;

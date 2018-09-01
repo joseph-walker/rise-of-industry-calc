@@ -4,7 +4,7 @@ import { css } from 'emotion';
 
 import { Header } from 'components/Layout/Header';
 import { Body } from 'components/layout/Body';
-import { Footer } from 'components/Layout/Footer';
+import { Footer } from 'containers/Footer';
 
 const appStyles = css`
 	display: flex;
