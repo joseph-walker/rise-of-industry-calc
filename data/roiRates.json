@@ -1100,8 +1100,8 @@
             }
         ]
     },
-    "Potatoes": {
-        "name": "Potatoes",
+    "Potato": {
+        "name": "Potato",
         "unitRate": "0.1",
         "components": [
             {
