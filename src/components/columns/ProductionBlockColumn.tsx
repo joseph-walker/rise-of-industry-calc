@@ -49,7 +49,7 @@ export function ProductionBlockColumn(props: OwnProps) {
 		)
 		: <FullSizeNotification
 			type={NotificationType.notification}
-			message="Select some products on the left to create a production block" />;
+			message="Select some products on the left to create a production block..." />;
 
 	return (
 		<div className={`column ${productionBlockColumnStyles}`}>

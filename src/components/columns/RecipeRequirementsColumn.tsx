@@ -45,6 +45,8 @@ interface OwnProps {
 }
 
 export function RecipeRequirementsColumn(props: OwnProps) {
+	const noBlocksMessage = `...and the number of factories you need will show up here`;
+
 	const requirementsContents = props.recipeRequirements.with({
 		// Don't show the loader or errors in this column,
 		// there's already a notification in the left column
@@ -54,6 +56,9 @@ export function RecipeRequirementsColumn(props: OwnProps) {
 			return eitherRequirements.with({
 				left: (err) => <FullSizeNotification message={err} type={NotificationType.notification} />,
 				right: function(requirements) {
+					if (!Object.keys(requirements).length)
+						return <FullSizeNotification message={noBlocksMessage} type={NotificationType.notification} />;
+
 					const listElements = toPairs(requirements).map(function([p, n], i) {
 						return (
 							<li className={requirementStyles} key={i}>
