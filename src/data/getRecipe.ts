@@ -1,4 +1,4 @@
-import { Rate, Chunks, Recipe } from "data/types";
+import { Chunks, Recipe } from "data/types";
 
 export function getRecipe(chunks: Chunks, productName: string): Recipe {
 	const extractChunkByName = (c: { name: string }) => extractChunk(c.name);

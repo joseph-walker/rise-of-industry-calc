@@ -1,6 +1,5 @@
 import { append as cons } from 'ramda';
 
-import { List } from 'util/List';
 import { RecipeRequirements, Recipe, Chunks, Product } from 'data/types';
 import { solve } from 'data/solve';
 
