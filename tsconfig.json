@@ -16,7 +16,8 @@
 			"containers/*": ["containers/*"],
 			"data/*": ["data/*"],
 			"state/*": ["state/*"],
-			"util/*": ["util/*"]
+			"util/*": ["util/*"],
+			"styles/*": ["styles/*"]
 		}
 	}
 }

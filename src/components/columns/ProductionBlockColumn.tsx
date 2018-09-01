@@ -5,9 +5,20 @@ import { Lens, lensIndex } from 'ramda';
 import { ProductionBlock as IProductionBlock, Product } from 'data/types';
 import { ProductionBlock } from 'components/widgets/ProductionBlock';
 import { FullSizeNotification, NotificationType } from 'components/widgets/FullSizeNotification';
+import { md, sm } from 'styles/breakpoints';
 
 const productionBlockColumnStyles = css`
 	flex: 1;
+	margin: 0 12px;
+
+	@media(max-width: ${md}) {
+		margin-right: 0;
+	}
+
+	@media(max-width: ${sm}) {
+		flex-basis: 100%;
+		margin: 24px 0;
+	}
 `;
 
 const productBlockStyles = css`

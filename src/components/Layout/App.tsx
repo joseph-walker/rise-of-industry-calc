@@ -3,7 +3,7 @@ import * as React from 'react';
 import { css } from 'emotion';
 
 import { Header } from 'components/Layout/Header';
-import { Main } from 'components/Layout/Main';
+import { Body } from 'components/layout/Body';
 import { Footer } from 'components/Layout/Footer';
 
 const appStyles = css`
@@ -26,7 +26,7 @@ export function App(props: OwnProps) {
 	return (
 		<section className={appStyles}>
 			<Header />
-			<Main />
+			<Body />
 			<Footer />
 		</section>
 	);

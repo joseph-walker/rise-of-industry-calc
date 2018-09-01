@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from 'emotion';
+import { sm } from 'styles/breakpoints';
 
 const headerContainerStyles = css`
 	display: flex;
@@ -8,6 +9,16 @@ const headerContainerStyles = css`
 const titleStyles = css`
 	margin-bottom: 12px;
 	font-size: 20px;
+
+	&:before {
+		content: 'Rise of Industry';
+	}
+
+	@media(max-width: ${sm}) {
+		&:before {
+			content: 'RoI';
+		}
+	}
 `;
 
 interface OwnProps {
@@ -17,7 +28,7 @@ interface OwnProps {
 export function Header(props: OwnProps) {
 	return (
 		<header className={headerContainerStyles}>
-			<h1 className={titleStyles}>Rise of Industry - Production Calculator</h1>
+			<h1 className={titleStyles}> - Production Calculator</h1>
 		</header>
 	);
 }

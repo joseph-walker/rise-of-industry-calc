@@ -7,9 +7,15 @@ import { Response } from 'util/Response';
 import { Maybe } from 'util/Maybe';
 import { FullSizeLoader } from 'components/widgets/FullSizeLoader';
 import { FullSizeNotification, NotificationType } from 'components/widgets/FullSizeNotification';
+import { sm } from 'styles/breakpoints';
 
 const productSelectorColumnStyles = css`
 	flex: 1;
+	margin-right: 12px;
+
+	@media(max-width: ${sm}) {
+		margin: 0;
+	}
 `;
 
 const searchBoxStyles = css`

@@ -7,9 +7,17 @@ import { Either } from 'util/Either';
 import { RequirementTuple } from 'data/types';
 import { FullSizeLoader } from 'components/widgets/FullSizeLoader';
 import { FullSizeNotification, NotificationType } from 'components/widgets/FullSizeNotification';
+import { md } from 'styles/breakpoints';
 
 const recipeRequirementsColumnStyles = css`
 	flex: 2;
+	margin-left: 12px;
+
+	@media(max-width: ${md}) {
+		flex-basis: 100%;
+		margin-left: 0;
+		margin-top: 24px;
+	}
 `;
 
 const requirementListStyles = css`

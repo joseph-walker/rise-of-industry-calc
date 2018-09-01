@@ -1,5 +1,7 @@
 import { injectGlobal } from 'emotion';
 
+import { sm, md } from 'styles/breakpoints';
+
 injectGlobal`
 	* {
 		all: unset;
@@ -32,6 +34,12 @@ injectGlobal`
 		font-family: 'Raleway', sans-serif;
 		color: #333;
 		font-size: 14px;
+	}
+
+	@media(max-width: ${md}) {
+		body, html {
+			height: auto;
+		}
 	}
 
 	h1,

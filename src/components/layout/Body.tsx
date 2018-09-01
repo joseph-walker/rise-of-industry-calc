@@ -4,23 +4,16 @@ import { css } from 'emotion';
 import { ProductSelectorColumn } from 'containers/ProductSelectorColumn';
 import { ProductionBlockColumn } from 'containers/ProductionBlockColumn';
 import { RecipeRequirementsColumn } from 'containers/RecipeRequirementsColumn';
+import { md } from 'styles/breakpoints';
 
 const mainContainerStyles = css`
 	display: flex;
 	flex: 1;
+	flex-wrap: wrap;
 
 	& .column {
 		display: flex;
 		flex-direction: column;
-		margin: 0 12px;
-	}
-
-	& .column:first-child {
-		margin-left: 0;
-	}
-
-	& .column:last-child {
-		margin-right: 0;
 	}
 
 	& .column section {
@@ -30,13 +23,19 @@ const mainContainerStyles = css`
 		border: 1px solid #EAEAEA;
 		height: 100%;
 	}
+
+	@media(max-width: ${md}) {
+		& .column {
+			height: 420px;
+		}
+	}
 `;
 
 interface OwnProps {
 	//
 }
 
-export function Main(props: OwnProps) {
+export function Body(props: OwnProps) {
 	return (
 		<main className={mainContainerStyles}>
 			<ProductSelectorColumn />
