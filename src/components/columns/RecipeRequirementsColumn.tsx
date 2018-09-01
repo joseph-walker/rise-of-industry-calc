@@ -52,7 +52,7 @@ export function RecipeRequirementsColumn(props: OwnProps) {
 		error: (err) => null,
 		ready: function(eitherRequirements) {
 			return eitherRequirements.with({
-				left: (err) => <FullSizeNotification message={err} type={NotificationType.error} />,
+				left: (err) => <FullSizeNotification message={err} type={NotificationType.notification} />,
 				right: function(requirements) {
 					const listElements = toPairs(requirements).map(function([p, n], i) {
 						return (
