@@ -1,5 +1,12 @@
 import * as React from 'react';
+import { toPairs } from 'ramda';
 import { css } from 'emotion';
+
+import { Response } from 'util/Response';
+import { Either } from 'util/Either';
+import { RequirementTuple } from 'data/types';
+import { FullSizeLoader } from 'components/widgets/FullSizeLoader';
+import { FullSizeNotification, NotificationType } from 'components/widgets/FullSizeNotification';
 
 const recipeRequirementsColumnStyles = css`
 	flex: 2;
@@ -34,20 +41,39 @@ const requirementStyles = css`
 `;
 
 interface OwnProps {
-	productRequirements: [string, number][]
+	recipeRequirements: Response<Either<string, RequirementTuple>, string>
 }
 
 export function RecipeRequirementsColumn(props: OwnProps) {
+	const requirementsContents = props.recipeRequirements.with({
+		// Don't show the loader or errors in this column,
+		// there's already a notification in the left column
+		loading: () => null,
+		error: (err) => null,
+		ready: function(eitherRequirements) {
+			return eitherRequirements.with({
+				left: (err) => <FullSizeNotification message={err} type={NotificationType.error} />,
+				right: function(requirements) {
+					const listElements = toPairs(requirements).map(function([p, n], i) {
+						return (
+							<li className={requirementStyles} key={i}>
+								<em>{p}</em><i>{n}</i>
+							</li>
+						);
+					});
+
+					return (
+						<ul className={requirementListStyles}>{listElements}</ul>
+					);
+				}
+			});
+		}
+	});
+
 	return (
 		<div className={`column ${recipeRequirementsColumnStyles}`}>
 			<h2>Factory Requirements</h2>
-			<section>
-				<ul className={requirementListStyles}>
-					<li className={requirementStyles}>
-						<em>Beef</em><i>x 7</i>
-					</li>
-				</ul>
-			</section>
+			<section>{requirementsContents}</section>
 		</div>
 	);
 }

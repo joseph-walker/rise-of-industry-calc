@@ -65,8 +65,8 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 			const emptyProductBlock: ProductionBlock = {
 				product: action.product,
 				requiredRate: {
-					rate: Maybe.Nothing<string>(),
-					days: Maybe.Just('15')
+					rate: '',
+					days: '15'
 				}
 			}
 
@@ -81,11 +81,8 @@ export const productsReducer: LoopReducer<ProductsState, ProductsAction> = (stat
 		}
 		case UpdateProductionBlockTypes.UpdateProductionBlock: {
 			const productionBlockLens = compose(lensProp('productBlocks'), action.blockPath) as Lens;
-			const newValue = action.value !== ''
-				? Maybe.Just(action.value.replace(/[^\d\.]/g, ''))
-				: Maybe.Nothing();
 
-			return set(productionBlockLens, newValue, state);
+			return set(productionBlockLens, action.value.replace(/[^\d\.]/g, ''), state);
 		}
 		default: {
 			return state;

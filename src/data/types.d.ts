@@ -8,8 +8,8 @@ export interface Product {
 }
 
 export interface OutputRequirements {
-	rate: Maybe<string>,
-	days: Maybe<string>
+	rate: string,
+	days: string
 }
 
 export interface ProductionBlock {
@@ -28,6 +28,8 @@ export interface RecipeRequirements {
 	requiredFactories: number,
 	components: RecipeRequirements[]
 }
+
+export type RequirementTuple = { [k: string]: number };
 
 export interface Chunks {
 	[name: string]: {

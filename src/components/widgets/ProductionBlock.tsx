@@ -57,6 +57,10 @@ const deleteButtonStyles = css`
 	}
 `;
 
+const hasError = css`
+	border-color: #f16628;
+`;
+
 interface OwnProps {
 	block: IProductionBlock,
 	onRemoveProduct: (p: Product) => void,
@@ -79,14 +83,14 @@ export function ProductionBlock(props: OwnProps) {
 				<input
 					className={inputStyles}
 					onChange={(e) => props.onUpdateBlockValue(lensProp('rate'), e.currentTarget.value)}
-					value={props.block.requiredRate.rate.withDefault('')}
+					value={props.block.requiredRate.rate}
 					type="text"
 					placeholder="0" />
 				<span>Every</span>
 				<input
 					className={inputStyles}
 					onChange={(e) => props.onUpdateBlockValue(lensProp('days'), e.currentTarget.value)}
-					value={props.block.requiredRate.days.withDefault('')}
+					value={props.block.requiredRate.days}
 					type="text"
 					placeholder="0" />
 				<span>Days</span>

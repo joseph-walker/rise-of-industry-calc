@@ -1,4 +1,5 @@
 import { isFunction, Monad } from 'util/Algebra';
+import { Either } from 'util/Either';
 
 enum MaybeType {
 	Just = 'MAYBE_JUST',
@@ -40,6 +41,13 @@ export class Maybe<T> implements Monad<T> {
 			return this.value;
 
 		return defaultValue;
+	}
+
+	public toEither<U>(error: U): Either<U, T> {
+		if (this.isJust())
+			return Either.Right(this.value);
+
+		return Either.Left(error);
 	}
 
 	public map<U>(fn: (x: T) => U): Maybe<U> {

@@ -109,7 +109,7 @@ Winter Clothes,0.033333333333333,heavy fabric,0.066666666666667,wool,0.066666666
 Work Clothes,0.033333333333333,heavy fabric,0.066666666666667,leather,0.066666666666667,,
 Waffles,0.033333333333333,sugar,0.133333333333333,dough,0.2,,
 Barley Whiskey,0.033333333333333,wheat,0.3,wooden barrels,0.2,yeast,0.2
-Axles,0.016666666666667,steel frame,0.05,tires,0.15,steel,0.05
+Axles,0.016666666666667,steel frame,0.05,tire,0.15,steel,0.05
 Body Chassis,0.013333333333333,exterior body,0.04,interior body,0.04,adhesive,0.12
 Car Prototype,0.002777777777778,body chassis,0.008333333333333,rolling chassis,0.008333333333333,,
 Combustion Engine,0.016666666666667,biofuel,0.15,alternator,0.05,car radiator,0.05

@@ -37,6 +37,7 @@ const fullSizeErrorStyles = css`
 
 const messageStyle = css`
 	text-align: center;
+	max-width: 320px;
 `;
 
 const Icon = styled('i')`

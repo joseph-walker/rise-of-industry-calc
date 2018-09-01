@@ -5,9 +5,9 @@ enum EitherType {
 	Right = 'EITHER_RIGHT'
 }
 
-export interface EitherPatternMatch<L, R, V> {
-	left: (l: L) => V,
-	right: (r: R) => V
+export interface EitherPatternMatch<L, R, U> {
+	left: (l: L) => U,
+	right: (r: R) => U
 }
 
 export class Either<L, R> implements Monad<R> {
@@ -42,6 +42,13 @@ export class Either<L, R> implements Monad<R> {
 		return Either.Left(this.left);
 	}
 
+	public mapError<U>(fn: (x: L) => U): Either<U, R> {
+		if (this.isLeft())
+			return Either.Left(fn(this.left));
+
+		return Either.Right(this.right);
+	}
+
 	public ap<U, V>(x: Either<L, U>): Either<L, V> {
 		if (this.isRight() && x.isRight()) {
 			if (isFunction<U, V>(this.right)) {
@@ -63,5 +70,12 @@ export class Either<L, R> implements Monad<R> {
 			return fn(this.right);
 
 		return Either.Left(this.left);
+	}
+
+	public with<U>(patterns: EitherPatternMatch<L, R, U>): U {
+		if (this.isRight())
+			return patterns.right(this.right);
+
+		return patterns.left(this.left);
 	}
 }
