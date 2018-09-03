@@ -13,4 +13,4 @@ const app = (
 	</Provider>
 );
 
-render(app, document.body);
+render(app, document.getElementById('app'));
