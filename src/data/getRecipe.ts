@@ -5,7 +5,7 @@ export function getRecipe(chunks: Chunks, productName: string): Recipe {
 
 	function extractChunk(n: string): Recipe {
 		if (chunks[n] === undefined)
-			throw new Error(`Error in 'getRecipe' -- Tried to extract chunk with name ${n}, but it was not found`);
+			throw new Error(`Error in 'getRecipe' -- Tried to extract chunk with name '${n}', but it was not found`);
 
 		const componentChunk = chunks[n];
 

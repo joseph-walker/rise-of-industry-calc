@@ -25,7 +25,7 @@ function fasIcon(type: NotificationType) {
 	})[type];
 }
 
-const fullSizeErrorStyles = css`
+const fullSizeNotificationStyles = css`
 	display: flex;
 	flex-direction: column;
 	padding: 12px;
@@ -33,11 +33,15 @@ const fullSizeErrorStyles = css`
 	height: 100%;
 	justify-content: center;
 	align-items: center;
-`;
-
-const messageStyle = css`
 	text-align: center;
 	max-width: 320px;
+	margin: auto;
+`;
+
+const bugReportCopy = css`
+	font-size: 12px;
+	color: #999;
+	margin-top: 24px;
 `;
 
 const Icon = styled('i')`
@@ -54,9 +58,13 @@ interface OwnProps {
 
 export function FullSizeNotification(props: OwnProps) {
 	return (
-		<div className={fullSizeErrorStyles}>
+		<div className={fullSizeNotificationStyles}>
 			<Icon notificationType={props.type}>{fasIcon(props.type)}</Icon>
-			<p className={messageStyle}>{props.message}</p>
+			<p>{props.message}</p>
+			{ props.type === NotificationType.error
+				? <p className={bugReportCopy}>This obviously shouldn't happen. Consider opening an issue on GitHub about this problem.</p>
+				: null
+			}
 		</div>
 	);
 }
