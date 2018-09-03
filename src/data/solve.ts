@@ -6,7 +6,7 @@ import { getRequirements } from 'data/getRequirements';
 export function solve(chunks: Chunks, requiredRate: Rate, productList: Product[]): [Product, number] {
 	switch (productList.length) {
 		case 0: {
-			throw new Error(`Cannot solve production chain with no products in it`);
+			throw new Error(`Error in 'solve' -- Cannot solve production chain with no products in it`);
 		}
 		case 1: {
 			const p = productList[0];
