@@ -37,8 +37,10 @@ if (env == 'development') {
 		devServer: {
 			contentBase: './',
 			publicPath: '/dist/',
-			index: 'index.html',
-			historyApiFallback: true
+			index: 'index-dev.html',
+			historyApiFallback: {
+				index: 'index-dev.html'
+			}
 		},
 	});
 }
