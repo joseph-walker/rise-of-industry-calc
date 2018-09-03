@@ -44,6 +44,16 @@ const bugReportCopy = css`
 	margin-top: 24px;
 `;
 
+const reportLink = css`
+	text-decoration: underline;
+	cursor: pointer;
+	transition: color 0.1s ease-in-out;
+
+	&:hover {
+		color: #333;
+	}
+`;
+
 const Icon = styled('i')`
 	font-size: 18px;
 	display: block;
@@ -57,12 +67,14 @@ interface OwnProps {
 }
 
 export function FullSizeNotification(props: OwnProps) {
+	const github = <a className={reportLink} href="https://github.com/joseph-walker/rise-of-industry-calc/issues" target="_new">GitHub</a>;
+
 	return (
 		<div className={fullSizeNotificationStyles}>
 			<Icon notificationType={props.type}>{fasIcon(props.type)}</Icon>
 			<p>{props.message}</p>
 			{ props.type === NotificationType.error
-				? <p className={bugReportCopy}>This obviously shouldn't happen. Consider opening an issue on GitHub about this problem.</p>
+				? <p className={bugReportCopy}>This obviously shouldn't happen. Consider opening an issue on {github} about this problem.</p>
 				: null
 			}
 		</div>
