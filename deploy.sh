@@ -25,4 +25,4 @@ git push -f origin gh-pages
 echo "Deployment complete. Cleaning up..."
 mv ./index.html ./index-prod.html
 mv ./index-dev.html ./index.html
-git checkout master
+git checkout -f master
