@@ -22,5 +22,7 @@ git commit -m "Automated Deployment"
 echo "Deploying to Github Pages..."
 git push -f origin gh-pages
 
-echo "Deployment complete. Switching back to master..."
+echo "Deployment complete. Cleaning up..."
+mv ./index.html ./index-prod.html
+mv ./index-dev.html ./index.html
 git checkout master
