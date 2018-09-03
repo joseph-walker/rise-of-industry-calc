@@ -2,7 +2,7 @@
 
 echo "Deploying:"
 echo "Deleting branch 'gh-pages'..."
-git branch -d gh-pages
+git branch -D gh-pages
 
 echo "Creating new deployment branch..."
 git checkout -b gh-pages
