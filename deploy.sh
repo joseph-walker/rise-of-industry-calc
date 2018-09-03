@@ -16,9 +16,11 @@ npm run build-prod
 
 echo "Commiting build assets..."
 git add -A
+git add -f --all dist/
 git commit -m "Automated Deployment"
 
 echo "Deploying to Github Pages..."
 git push -f origin gh-pages
 
-echo "Done."
+echo "Deployment complete. Switching back to master..."
+git checkout master
