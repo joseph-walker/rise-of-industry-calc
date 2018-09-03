@@ -39,6 +39,7 @@ const inputStyles = css`
 	margin: 0 6px;
 	background-color: #FFF;
 	border: 1px solid #eaeaea;
+	border-radius: 2px;
 `;
 
 const deleteButtonStyles = css`
@@ -58,7 +59,8 @@ const deleteButtonStyles = css`
 `;
 
 const hasError = css`
-	border-color: #f16628;
+	background-color: #ffede6;
+	border-color: #efcec0;
 `;
 
 interface OwnProps {
@@ -67,13 +69,20 @@ interface OwnProps {
 	onUpdateBlockValue: (l: Lens, s: string) => void
 }
 
+function rateComponentHasError(rateComponent: string): boolean {
+	return rateComponent === '' || parseFloat(rateComponent) === 0;
+}
+
 export function ProductionBlock(props: OwnProps) {
+	const block = props.block;
+	const requiredRate = block.requiredRate;
+
 	return (
 		<>
 			<div className={headerStyles}>
-				<em>{props.block.product.name}</em>
+				<em>{block.product.name}</em>
 				<button
-					onClick={() => props.onRemoveProduct(props.block.product)}
+					onClick={() => props.onRemoveProduct(block.product)}
 					className={deleteButtonStyles}>
 					<i className="fas fa-times"></i>
 				</button>
@@ -81,16 +90,16 @@ export function ProductionBlock(props: OwnProps) {
 			<div className={bodyStyles}>
 				<span className={labelStyles}>Output:</span>
 				<input
-					className={inputStyles}
+					className={css`${inputStyles} ${rateComponentHasError(requiredRate.rate) ? hasError : null}`}
 					onChange={(e) => props.onUpdateBlockValue(lensProp('rate'), e.currentTarget.value)}
-					value={props.block.requiredRate.rate}
+					value={requiredRate.rate}
 					type="text"
 					placeholder="0" />
 				<span>Every</span>
 				<input
-					className={inputStyles}
+					className={css`${inputStyles} ${rateComponentHasError(requiredRate.days) ? hasError : null}`}
 					onChange={(e) => props.onUpdateBlockValue(lensProp('days'), e.currentTarget.value)}
-					value={props.block.requiredRate.days}
+					value={requiredRate.days}
 					type="text"
 					placeholder="0" />
 				<span>Days</span>
