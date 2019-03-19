@@ -275,7 +275,7 @@
         "unitRate": "0.044444444444445",
         "components": [
             {
-                "name": "Chicken Meat",
+                "name": "Chicken",
                 "unitRate": "0.155555555555556"
             },
             {
@@ -907,7 +907,7 @@
         "unitRate": "0.033333333333333",
         "components": [
             {
-                "name": "Soda Warer",
+                "name": "Soda Water",
                 "unitRate": "0.2"
             },
             {
@@ -1147,7 +1147,7 @@
                 "unitRate": "0.166666666666667"
             },
             {
-                "name": "Plastic",
+                "name": "Plastics",
                 "unitRate": "0.2"
             }
         ]
@@ -1217,7 +1217,7 @@
                 "unitRate": "0.1"
             },
             {
-                "name": "Plastics",
+                "name": "ss",
                 "unitRate": "0.166666666666667"
             }
         ]

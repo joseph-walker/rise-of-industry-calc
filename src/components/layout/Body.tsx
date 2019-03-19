@@ -12,6 +12,7 @@ const mainContainerStyles = css`
 	flex-wrap: wrap;
 
 	& .column {
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 	}
