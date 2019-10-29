@@ -687,8 +687,8 @@
             }
         ]
     },
-    "Auxiliary Arm Extension": {
-        "name": "Auxiliary Arm Extension",
+    "Auxiliary-Arm Extension": {
+        "name": "Auxiliary-Arm Extension",
         "unitRate": 0.03333333333333333,
         "components": [
             {
