@@ -1,0 +1,76 @@
+green subatomic laser,30,1,green quartz crystal,2,bioleds,1,steel cases,1
+laser control system,120,1,verteron particle infuser,1,structural disassembler,1,nuclear power cells,1
+microfilament frame,120,1,carbon fibers tow,2,grav field generator,2,titanium struts,1
+neural interface,60,1,blue gamma laser,1,neural connectors,1,bio memory cells,1
+quantum matrix,120,1,neural interface,1,theta raw processor,1,,
+structural disassembler,60,1,red anti-matter laser,1,auxiliary-arm extension,1,,
+theta raw processor,60,1,superconductor,1,nanochips,1,,
+verteron particle infuser,60,1,green subatomic laser,1,auxiliary-arm extension,1,,
+blue gamma laser,30,1,blue quartz crystal,2,bioleds,2,steel cases,1
+grav field generator,30,2,quartz solution,2,titanium cases,1,,
+green subatomic laser,30,1,green quartz crystal,2,bioleds,1,steel cases,1
+hodagrium,30,2,titanium,1,steel,1,gold,1
+microchips,30,2,silica,1,gold,1,,
+nanochips,30,1,microchips,2,binary quark gate,2,thermoplastic,1
+nuclear power cells,30,1,thorium rods,1,hodagrium,1,,
+red anti-matter laser,30,1,red quartz crystal,2,bioleds,2,steel cases,1
+steel cases,30,2,steel,2,,,,
+superconductor,30,2,hodagrium,1,coolant,1,,
+thorium rods,30,2,thorium,2,,,,
+titanium cases,30,2,titanium,1,,,,
+binary quark gate,30,2,quartz solution,2,synthetic resin,1,,
+bio memory cells,30,1,thermoplastic,2,tholin gel,3,,
+blue quartz crystal,30,2,polymers,2,quartz solution,1,silica,1
+carbon fibers tow,30,1,thermoplastic,3,synthetic resin,2,,
+coolant,15,2,polymers,2,,,,
+green quartz crystal,30,2,polymers,2,quartz solution,1,silica,1
+neural connectors,30,1,thermoplastic,3,gold wire,2,,
+quartz solution,30,2,silica,1,polymers,1,,
+red quartz crystal,30,2,polymers,2,quartz solution,1,silica,1
+synthetic resin,15,2,silica,2,,,,
+thermoplastic,15,2,silica,2,cellulose algae,3,,
+tholin gel,30,2,tholins,2,silica,1,,
+tholins,15,2,polymers,1,primordial algae,1,,
+antibacterial pill,30,1,antibacterial solution,2,silica,1,,
+antibacterial solution,30,1,microbial culture,1,tholins,1,hyper bacterial culture,1
+antiviral pill,30,1,antiviral solution,2,silica,1,,
+antiviral solution,30,1,microbial culture,1,tholins,1,k1ll-411 virus culture,1
+bioleds,30,1,thorium,2,cellulose algae,2,,
+bone growth material,30,1,regenerative solution,2,high fiber tissue,1,,
+complete meal paste,30,1,lean protein tissue,1,high fiber tissue,1,carbos tissue,
+microbial culture,30,2,polymers,1,silica,1,,
+organ replacement,30,1,regenerative solution,2,lean protein tissue,1,,
+regen gel,30,1,regenerative solution,2,silica,1,,
+regenerative solution,30,1,microbial culture,1,tholins,1,primordial algae,1
+worker's meal bar,30,1,lean protein tissue,1,energy rich tissue,1,carbos tissue,1
+replicator 5000,360,1,quantum matrix,1,microfilament frame,1,laser control system,1
+actuators,30,2,titanium,1,gold,1,,
+auxiliary arm extension,30,1,cyberlimb mechanism,1,nuclear power cells,1,,
+collector bot,45,1,red quartz crystal,1,light robot frame,1,nuclear power cells,1
+cyberlimb mechanism,30,1,actuators,1,steel struts,1,,
+gold wire,15,2,gold,2,,,,
+heavy construction bot,30,1,green quartz crystal,1,nuclear power cells,1,heavy robot frame,1
+heavy lifting cyberleg,30,1,cyberlimb mechanism,1,nuclear power cells,1,titanium struts,1
+heavy mover bot,30,1,nuclear power cells,1,grav field generator,1,heavy robot frame,1
+heavy robot frame,30,1,actuators,1,titanium,1,,
+light construction bot,45,1,green quartz crystal,1,light robot frame,1,nuclear power cells,1
+light robot frame,30,1,actuators,1,microchips,1,steel struts,1
+medi-bot,30,1,blue quartz crystal,1,light robot frame,1,regenerative solution,1
+steel struts,30,2,steel,3,,,,
+titanium struts,30,2,titanium,1,,,,
+utility cyberarm,30,1,cyberlimb mechanism,1,blue quartz crystal,1,,
+cellulose algae,30,2,,,,,,
+hyper bacterial culture,30,2,,,,,,
+k1ll-411 virus culture,30,2,,,,,,
+primordial algae,30,2,,,,,,
+carbos tissue,30,2,cellulose algae,2,,,,
+concentrated vitamins,30,2,cellulose algae,2,,,,
+energy rich tissue,30,2,primordial algae,2,,,,
+high fiber tissue,30,2,cellulose algae,1,primordial algae,1,,
+lean protein tissue,30,2,primordial algae,2,,,,
+gold,15,1,,,,,,
+polymers,15,1,,,,,,
+steel,15,1,,,,,,
+silica,15,1,,,,,,
+thorium,15,1,,,,,,
+titanium,15,1,,,,,,

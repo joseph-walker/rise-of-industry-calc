@@ -1,19 +1,5 @@
 const fs = require('fs');
 
-/*
-A raw product looks like:
-{
-    name: 'Some Product',
-    unitRate: 0.1,
-    components: [
-        {
-            name: 'Some Component',
-            unitRate: 0.06667
-        }
-    ]
-}
-*/
-
 function normalizeName(rawName) {
     return rawName
         .toLowerCase()
@@ -27,10 +13,17 @@ function tupleify(arr) {
         return [arr.slice(0, 2)].concat(tupleify(arr.slice(2)));
 }
 
-function constructProduct([name, unitRate]) {
+function constructProduct([name, prodDays, outputRate]) {
     return {
         name: normalizeName(name),
-        unitRate: unitRate
+        unitRate: outputRate / prodDays
+    };
+}
+
+function constructComponent(prodDays, [name, outputRate]) {
+    return {
+        name: normalizeName(name),
+        unitRate: outputRate / prodDays
     };
 }
 
@@ -41,10 +34,13 @@ function parseProductDefinition(rawString) {
         .split(',')
         .filter(notEmpty);
 
-    const product = constructProduct(bits.slice(0, 2));
+	const prodBits = bits.slice(0, 3);
+	const prodDays = prodBits[1];
+	const product = constructProduct(prodBits);
+
     const components = {
-        components: tupleify(bits.slice(2))
-            .map(constructProduct)
+        components: tupleify(bits.slice(3))
+            .map(tuple => constructComponent(prodDays, tuple))
     };
 
     return Object.assign({}, product, components);
@@ -57,7 +53,7 @@ function createDict(carry, product) {
 }
 
 const ratesData = fs
-    .readFileSync('./roiRates.csv')
+    .readFileSync('./ROI2130.csv')
 	.toString()
 	.trim()
     .split('\n')

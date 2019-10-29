@@ -1,0 +1,1006 @@
+{
+    "Green Subatomic Laser": {
+        "name": "Green Subatomic Laser",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Green Quartz Crystal",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Bioleds",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Steel Cases",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Laser Control System": {
+        "name": "Laser Control System",
+        "unitRate": 0.008333333333333333,
+        "components": [
+            {
+                "name": "Verteron Particle Infuser",
+                "unitRate": 0.008333333333333333
+            },
+            {
+                "name": "Structural Disassembler",
+                "unitRate": 0.008333333333333333
+            },
+            {
+                "name": "Nuclear Power Cells",
+                "unitRate": 0.008333333333333333
+            }
+        ]
+    },
+    "Microfilament Frame": {
+        "name": "Microfilament Frame",
+        "unitRate": 0.008333333333333333,
+        "components": [
+            {
+                "name": "Carbon Fibers Tow",
+                "unitRate": 0.016666666666666666
+            },
+            {
+                "name": "Grav Field Generator",
+                "unitRate": 0.016666666666666666
+            },
+            {
+                "name": "Titanium Struts",
+                "unitRate": 0.008333333333333333
+            }
+        ]
+    },
+    "Neural Interface": {
+        "name": "Neural Interface",
+        "unitRate": 0.016666666666666666,
+        "components": [
+            {
+                "name": "Blue Gamma Laser",
+                "unitRate": 0.016666666666666666
+            },
+            {
+                "name": "Neural Connectors",
+                "unitRate": 0.016666666666666666
+            },
+            {
+                "name": "Bio Memory Cells",
+                "unitRate": 0.016666666666666666
+            }
+        ]
+    },
+    "Quantum Matrix": {
+        "name": "Quantum Matrix",
+        "unitRate": 0.008333333333333333,
+        "components": [
+            {
+                "name": "Neural Interface",
+                "unitRate": 0.008333333333333333
+            },
+            {
+                "name": "Theta Raw Processor",
+                "unitRate": 0.008333333333333333
+            }
+        ]
+    },
+    "Structural Disassembler": {
+        "name": "Structural Disassembler",
+        "unitRate": 0.016666666666666666,
+        "components": [
+            {
+                "name": "Red Anti-Matter Laser",
+                "unitRate": 0.016666666666666666
+            },
+            {
+                "name": "Auxiliary-Arm Extension",
+                "unitRate": 0.016666666666666666
+            }
+        ]
+    },
+    "Theta Raw Processor": {
+        "name": "Theta Raw Processor",
+        "unitRate": 0.016666666666666666,
+        "components": [
+            {
+                "name": "Superconductor",
+                "unitRate": 0.016666666666666666
+            },
+            {
+                "name": "Nanochips",
+                "unitRate": 0.016666666666666666
+            }
+        ]
+    },
+    "Verteron Particle Infuser": {
+        "name": "Verteron Particle Infuser",
+        "unitRate": 0.016666666666666666,
+        "components": [
+            {
+                "name": "Green Subatomic Laser",
+                "unitRate": 0.016666666666666666
+            },
+            {
+                "name": "Auxiliary-Arm Extension",
+                "unitRate": 0.016666666666666666
+            }
+        ]
+    },
+    "Blue Gamma Laser": {
+        "name": "Blue Gamma Laser",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Blue Quartz Crystal",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Bioleds",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Steel Cases",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Grav Field Generator": {
+        "name": "Grav Field Generator",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Quartz Solution",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Titanium Cases",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Hodagrium": {
+        "name": "Hodagrium",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Titanium",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Steel",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Gold",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Microchips": {
+        "name": "Microchips",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Gold",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Nanochips": {
+        "name": "Nanochips",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Microchips",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Binary Quark Gate",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Thermoplastic",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Nuclear Power Cells": {
+        "name": "Nuclear Power Cells",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Thorium Rods",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Hodagrium",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Red Anti-Matter Laser": {
+        "name": "Red Anti-Matter Laser",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Red Quartz Crystal",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Bioleds",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Steel Cases",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Steel Cases": {
+        "name": "Steel Cases",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Steel",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Superconductor": {
+        "name": "Superconductor",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Hodagrium",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Coolant",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Thorium Rods": {
+        "name": "Thorium Rods",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Thorium",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Titanium Cases": {
+        "name": "Titanium Cases",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Titanium",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Binary Quark Gate": {
+        "name": "Binary Quark Gate",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Quartz Solution",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Synthetic Resin",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Bio Memory Cells": {
+        "name": "Bio Memory Cells",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Thermoplastic",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Tholin Gel",
+                "unitRate": 0.1
+            }
+        ]
+    },
+    "Blue Quartz Crystal": {
+        "name": "Blue Quartz Crystal",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Polymers",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Quartz Solution",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Carbon Fibers Tow": {
+        "name": "Carbon Fibers Tow",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Thermoplastic",
+                "unitRate": 0.1
+            },
+            {
+                "name": "Synthetic Resin",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Coolant": {
+        "name": "Coolant",
+        "unitRate": 0.13333333333333333,
+        "components": [
+            {
+                "name": "Polymers",
+                "unitRate": 0.13333333333333333
+            }
+        ]
+    },
+    "Green Quartz Crystal": {
+        "name": "Green Quartz Crystal",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Polymers",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Quartz Solution",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Neural Connectors": {
+        "name": "Neural Connectors",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Thermoplastic",
+                "unitRate": 0.1
+            },
+            {
+                "name": "Gold Wire",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Quartz Solution": {
+        "name": "Quartz Solution",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Polymers",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Red Quartz Crystal": {
+        "name": "Red Quartz Crystal",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Polymers",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Quartz Solution",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Synthetic Resin": {
+        "name": "Synthetic Resin",
+        "unitRate": 0.13333333333333333,
+        "components": [
+            {
+                "name": "Silica",
+                "unitRate": 0.13333333333333333
+            }
+        ]
+    },
+    "Thermoplastic": {
+        "name": "Thermoplastic",
+        "unitRate": 0.13333333333333333,
+        "components": [
+            {
+                "name": "Silica",
+                "unitRate": 0.13333333333333333
+            },
+            {
+                "name": "Cellulose Algae",
+                "unitRate": 0.2
+            }
+        ]
+    },
+    "Tholin Gel": {
+        "name": "Tholin Gel",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Tholins",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Tholins": {
+        "name": "Tholins",
+        "unitRate": 0.13333333333333333,
+        "components": [
+            {
+                "name": "Polymers",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Primordial Algae",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Antibacterial Pill": {
+        "name": "Antibacterial Pill",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Antibacterial Solution",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Antibacterial Solution": {
+        "name": "Antibacterial Solution",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Microbial Culture",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Tholins",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Hyper Bacterial Culture",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Antiviral Pill": {
+        "name": "Antiviral Pill",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Antiviral Solution",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Antiviral Solution": {
+        "name": "Antiviral Solution",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Microbial Culture",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Tholins",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "K1ll-411 Virus Culture",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Bioleds": {
+        "name": "Bioleds",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Thorium",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Cellulose Algae",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Bone Growth Material": {
+        "name": "Bone Growth Material",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Regenerative Solution",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "High Fiber Tissue",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Complete Meal Paste": {
+        "name": "Complete Meal Paste",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Lean Protein Tissue",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "High Fiber Tissue",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Microbial Culture": {
+        "name": "Microbial Culture",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Polymers",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Organ Replacement": {
+        "name": "Organ Replacement",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Regenerative Solution",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Lean Protein Tissue",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Regen Gel": {
+        "name": "Regen Gel",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Regenerative Solution",
+                "unitRate": 0.06666666666666667
+            },
+            {
+                "name": "Silica",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Regenerative Solution": {
+        "name": "Regenerative Solution",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Microbial Culture",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Tholins",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Primordial Algae",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Worker'S Meal Bar": {
+        "name": "Worker'S Meal Bar",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Lean Protein Tissue",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Energy Rich Tissue",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Carbos Tissue",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Replicator 5000": {
+        "name": "Replicator 5000",
+        "unitRate": 0.002777777777777778,
+        "components": [
+            {
+                "name": "Quantum Matrix",
+                "unitRate": 0.002777777777777778
+            },
+            {
+                "name": "Microfilament Frame",
+                "unitRate": 0.002777777777777778
+            },
+            {
+                "name": "Laser Control System",
+                "unitRate": 0.002777777777777778
+            }
+        ]
+    },
+    "Actuators": {
+        "name": "Actuators",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Titanium",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Gold",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Auxiliary Arm Extension": {
+        "name": "Auxiliary Arm Extension",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Cyberlimb Mechanism",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Nuclear Power Cells",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Collector Bot": {
+        "name": "Collector Bot",
+        "unitRate": 0.022222222222222223,
+        "components": [
+            {
+                "name": "Red Quartz Crystal",
+                "unitRate": 0.022222222222222223
+            },
+            {
+                "name": "Light Robot Frame",
+                "unitRate": 0.022222222222222223
+            },
+            {
+                "name": "Nuclear Power Cells",
+                "unitRate": 0.022222222222222223
+            }
+        ]
+    },
+    "Cyberlimb Mechanism": {
+        "name": "Cyberlimb Mechanism",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Actuators",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Steel Struts",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Gold Wire": {
+        "name": "Gold Wire",
+        "unitRate": 0.13333333333333333,
+        "components": [
+            {
+                "name": "Gold",
+                "unitRate": 0.13333333333333333
+            }
+        ]
+    },
+    "Heavy Construction Bot": {
+        "name": "Heavy Construction Bot",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Green Quartz Crystal",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Nuclear Power Cells",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Heavy Robot Frame",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Heavy Lifting Cyberleg": {
+        "name": "Heavy Lifting Cyberleg",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Cyberlimb Mechanism",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Nuclear Power Cells",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Titanium Struts",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Heavy Mover Bot": {
+        "name": "Heavy Mover Bot",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Nuclear Power Cells",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Grav Field Generator",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Heavy Robot Frame",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Heavy Robot Frame": {
+        "name": "Heavy Robot Frame",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Actuators",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Titanium",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Light Construction Bot": {
+        "name": "Light Construction Bot",
+        "unitRate": 0.022222222222222223,
+        "components": [
+            {
+                "name": "Green Quartz Crystal",
+                "unitRate": 0.022222222222222223
+            },
+            {
+                "name": "Light Robot Frame",
+                "unitRate": 0.022222222222222223
+            },
+            {
+                "name": "Nuclear Power Cells",
+                "unitRate": 0.022222222222222223
+            }
+        ]
+    },
+    "Light Robot Frame": {
+        "name": "Light Robot Frame",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Actuators",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Microchips",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Steel Struts",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Medi-Bot": {
+        "name": "Medi-Bot",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Blue Quartz Crystal",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Light Robot Frame",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Regenerative Solution",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Steel Struts": {
+        "name": "Steel Struts",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Steel",
+                "unitRate": 0.1
+            }
+        ]
+    },
+    "Titanium Struts": {
+        "name": "Titanium Struts",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Titanium",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Utility Cyberarm": {
+        "name": "Utility Cyberarm",
+        "unitRate": 0.03333333333333333,
+        "components": [
+            {
+                "name": "Cyberlimb Mechanism",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Blue Quartz Crystal",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Cellulose Algae": {
+        "name": "Cellulose Algae",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "Hyper Bacterial Culture": {
+        "name": "Hyper Bacterial Culture",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "K1ll-411 Virus Culture": {
+        "name": "K1ll-411 Virus Culture",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "Primordial Algae": {
+        "name": "Primordial Algae",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "Carbos Tissue": {
+        "name": "Carbos Tissue",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Cellulose Algae",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Concentrated Vitamins": {
+        "name": "Concentrated Vitamins",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Cellulose Algae",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Energy Rich Tissue": {
+        "name": "Energy Rich Tissue",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Primordial Algae",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "High Fiber Tissue": {
+        "name": "High Fiber Tissue",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Cellulose Algae",
+                "unitRate": 0.03333333333333333
+            },
+            {
+                "name": "Primordial Algae",
+                "unitRate": 0.03333333333333333
+            }
+        ]
+    },
+    "Lean Protein Tissue": {
+        "name": "Lean Protein Tissue",
+        "unitRate": 0.06666666666666667,
+        "components": [
+            {
+                "name": "Primordial Algae",
+                "unitRate": 0.06666666666666667
+            }
+        ]
+    },
+    "Gold": {
+        "name": "Gold",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "Polymers": {
+        "name": "Polymers",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "Steel": {
+        "name": "Steel",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "Silica": {
+        "name": "Silica",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "Thorium": {
+        "name": "Thorium",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    },
+    "Titanium": {
+        "name": "Titanium",
+        "unitRate": 0.06666666666666667,
+        "components": []
+    }
+}
