@@ -1,6 +1,6 @@
 import { injectGlobal } from 'emotion';
 
-import { sm, md } from 'styles/breakpoints';
+import { md } from 'styles/breakpoints';
 
 injectGlobal`
 	* {
@@ -23,12 +23,12 @@ injectGlobal`
 	}
 
 	body, html {
+		display: block;
 		width: 100%;
 		height: 100%;
 	}
 
 	body {
-		display: block;
 		padding: 24px;
 		background-color: rgb(242, 242, 242);
 		font-family: 'Raleway', sans-serif;

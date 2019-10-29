@@ -10,12 +10,12 @@ interface FetchRatesInitAction {
 	type: FetchRatesActionTypes.Init
 }
 
-interface FetchRatesSuccessAction {
+export interface FetchRatesSuccessAction {
 	type: FetchRatesActionTypes.Success,
 	rates: Chunks
 }
 
-interface FetchRatesFailAction {
+export interface FetchRatesFailAction {
 	type: FetchRatesActionTypes.Fail,
 	error: string
 }

@@ -8,7 +8,7 @@ import { FullSizeNotification, NotificationType } from 'components/widgets/FullS
 import { md, sm } from 'styles/breakpoints';
 
 const productionBlockColumnStyles = css`
-	flex: 1;
+	grid-area: b;
 	margin: 0 12px;
 
 	@media(max-width: ${md}) {
@@ -24,7 +24,6 @@ const productionBlockColumnStyles = css`
 
 const productBlockStyles = css`
 	overflow-y: scroll;
-	height: 100%;
 
 	& li {
 		display: block;

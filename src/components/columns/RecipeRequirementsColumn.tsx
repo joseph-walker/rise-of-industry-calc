@@ -10,7 +10,7 @@ import { FullSizeNotification, NotificationType } from 'components/widgets/FullS
 import { md } from 'styles/breakpoints';
 
 const recipeRequirementsColumnStyles = css`
-	flex: 2;
+	grid-area: c;
 	margin-left: 12px;
 
 	@media(max-width: ${md}) {
@@ -23,7 +23,6 @@ const recipeRequirementsColumnStyles = css`
 const requirementListStyles = css`
 	display: block;
 	overflow-y: scroll;
-	height: 100%;
 `;
 
 const requirementStyles = css`

@@ -10,7 +10,7 @@ import { FullSizeNotification, NotificationType } from 'components/widgets/FullS
 import { sm } from 'styles/breakpoints';
 
 const productSelectorColumnStyles = css`
-	flex: 1;
+	grid-area: a;
 	margin-right: 12px;
 
 	@media(max-width: ${sm}) {
@@ -27,8 +27,7 @@ const searchBoxStyles = css`
 
 const productListStyles = css`
 	display: block;
-	height: 100%;
-	overflow-y: scroll;
+	flex: 1;
 `;
 
 const productListItemStyles = css`

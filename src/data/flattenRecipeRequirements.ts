@@ -1,4 +1,4 @@
-import { toPairs, splitEvery, nth, mergeWith, add, filter, compose, map, complement, isEmpty } from 'ramda';
+import { toPairs, splitEvery, nth, filter, compose, map, complement, isEmpty } from 'ramda';
 import { flatten } from 'flat';
 
 import { RequirementTuple, RecipeRequirements } from "data/types";
@@ -10,7 +10,7 @@ export function flattenRecipeRequirements(recipe: RecipeRequirements): Requireme
 		splitEvery(2),
 		filter(complement(isEmpty)),
 		map(nth(1)),
-		toPairs,
+		toPairs as any,
 		(r: RecipeRequirements) => flatten(r)
 	);
 

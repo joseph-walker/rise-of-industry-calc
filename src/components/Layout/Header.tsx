@@ -3,7 +3,7 @@ import { css } from 'emotion';
 import { sm } from 'styles/breakpoints';
 
 const headerContainerStyles = css`
-	display: flex;
+	grid-area: h;
 `;
 
 const titleStyles = css`

@@ -5,6 +5,7 @@ import { ButtonStyle, Button } from 'components/widgets/Button';
 import { sm } from 'styles/breakpoints';
 
 const footerStyles = css`
+	grid-area: f;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
