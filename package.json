@@ -13,7 +13,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"emotion": "^9.2.12",
-		"flat": "^4.1.0",
+		"flat": "^5.0.1",
 		"ramda": "^0.26.1",
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
